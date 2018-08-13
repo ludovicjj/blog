@@ -28,3 +28,8 @@ if($p === 'index')
 	$content = ob_get_clean();
 	require('master/view/template/default.php');
 }
+elseif($p === 'posts')
+{
+	$controller = new master\controller\PostsController();
+	$controller->posts();
+}
