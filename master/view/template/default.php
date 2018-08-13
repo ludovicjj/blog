@@ -43,6 +43,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php?p=index">Accueil</a></li>
+			<li><a href="index.php?p=posts">Articles</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
