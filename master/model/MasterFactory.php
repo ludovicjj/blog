@@ -4,7 +4,7 @@ namespace master\model;
 
 class MasterFactory
 {
-	
+	private $settings = [];
 	private static $_instance;
 	
 	public static function getInstance()
@@ -16,4 +16,8 @@ class MasterFactory
 		return self::$_instance;
 	}
 	
+	public function __construct()
+	{
+		$this->settings = require('config/config.php');
+	}
 }
