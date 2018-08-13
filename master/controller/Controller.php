@@ -12,4 +12,14 @@ class Controller
 		$this->viewRoot = 'master/view/';
 	}
 	
+	protected function render($view, $variables = [])
+	{
+		extract($variables);
+		
+		ob_start();
+		require($this->viewRoot . $view .'.php');
+		$content = ob_get_clean();
+		require($this->viewRoot . 'template/' . $this->template . '.php');
+	}
+	
 }
