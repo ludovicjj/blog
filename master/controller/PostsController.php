@@ -1,6 +1,7 @@
 <?php
 
 namespace master\controller;
+use \master\model\MasterFactory;
 
 class PostsController extends Controller
 {
