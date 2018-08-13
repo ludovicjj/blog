@@ -20,4 +20,19 @@ class MasterFactory
 	{
 		$this->settings = require('config/config.php');
 	}
+	
+	/*
+	* function getSettings 
+	* @param string
+	* return string
+	*/
+	public function getSettings($key)
+	{
+		if(isset($this->settings[$key]))
+		{
+			return $this->settings[$key];
+		}else{
+			return null;
+		}
+	}
 }
