@@ -1,6 +1,7 @@
 <?php
 
 namespace master\model\database;
+use \PDO;
 
 class MysqlDatabase
 {
