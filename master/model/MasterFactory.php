@@ -53,4 +53,15 @@ class MasterFactory
 		}
 		return $this->db_instance;
 	}
+	
+	/*
+	* function getTable
+	* @param string
+	* return object
+	*/
+	public function getTable($class_name)
+	{
+		$class = '\master\model\table\\'. ucfirst($class_name) . 'Table';
+		return new $class($this->getDB());
+	}
 }
