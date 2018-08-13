@@ -9,6 +9,7 @@ class MysqlDatabase
 	private $db_pass;
 	private $db_host;
 	
+	private $pdo;
 	
 	public function __construct($db_user, $db_pass, $db_host)
 	{
