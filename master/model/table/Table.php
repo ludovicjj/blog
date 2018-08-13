@@ -6,6 +6,7 @@ class Table
 {
 	protected $db;
 	protected $table;
+	protected $entity;
 	
 	public function __construct( \master\model\database\MysqlDatabase $db)
 	{
@@ -20,5 +21,15 @@ class Table
 			$this->table = $resultat;
 		}
 		
+	}
+	
+	public function getEntity($array)
+	{
+		$class_name = get_class($this);
+		$explode = explode('\\' , $class_name);
+		$last = end($explode);
+		$resultat = 'master\model\entity\\'.str_replace('Table', 'Entity', $last);
+		
+		return $this->entity = new $resultat($array);
 	}
 }
