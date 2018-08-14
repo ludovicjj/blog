@@ -21,13 +21,15 @@ else
 	$p = 'index';
 }
 
-if($p === 'index')
+switch($p)
 {
+	case 'index' :
 	$controller = new master\controller\PostsController();
 	$controller->index();
-}
-elseif($p === 'posts')
-{
+	break;
+	
+	case 'posts' :
 	$controller = new master\controller\PostsController();
 	$controller->posts();
+	break;
 }
