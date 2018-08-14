@@ -17,6 +17,13 @@ class MasterFactory
 		return self::$_instance;
 	}
 	
+	public static function load()
+	{
+		session_start();
+		require ('master/Autoloader.php');
+		\master\Autoloader::register();
+	}
+	
 	public function __construct()
 	{
 		$this->settings = require('config/config.php');
