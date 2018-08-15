@@ -33,4 +33,9 @@ class PostsController extends Controller
 		
 		$this->render('frontend/posts', compact('paging', 'post'));
 	}
+	
+	public function index()
+	{
+		$this->render('frontend/index');
+	}
 }

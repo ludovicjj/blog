@@ -1,8 +1,8 @@
 <div class="col-sm-8">
-	<?php foreach($post AS $post): ?>
-	<h1><?= $post->getTitle();?></h1>
-	<small>Par <?= $post->getAuthor();?>, le <?= $post->getDay() .' '.$post->getMonth().' '.$post->getYear();?></small>
-	<p><?= $post->getIntro();?></p>
+	<?php foreach($post AS $postList): ?>
+	<h1><?= $postList->getTitle();?></h1>
+	<small>Par <?= $postList->getAuthor();?>, le <?= $postList->getDay() .' '.$postList->getMonth().' '.$postList->getYear();?></small>
+	<p><?= $postList->getIntro();?></p>
 	<?php endforeach; ?>
 </div>
 
