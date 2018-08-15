@@ -16,6 +16,14 @@ class PostsEntity extends Entity
 	private $_year;
 	private $_time;
 	
+	/** function getUrl
+	* @return string
+	*/
+	public function getUrl()
+	{
+		return $url = 'index.php?p=single&id=' . $this->getId();
+	}
+	
 	//getter
 	public function getId()
 	{
