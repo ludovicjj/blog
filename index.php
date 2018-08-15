@@ -1,7 +1,7 @@
 <?php
 
-require ('master/model/MasterFactory.php');
-master\model\MasterFactory::load();
+require ('master/Autoloader.php');
+master\Autoloader::register();
 
 if(isset($_GET['p']))
 {
