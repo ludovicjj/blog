@@ -6,6 +6,7 @@ class Autoloader
 {
 	static function register()
 	{
+		session_start();
 		spl_autoload_register(array(__CLASS__, 'autoload'));
 	}
 	
