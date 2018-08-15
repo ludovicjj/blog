@@ -22,4 +22,9 @@ class Controller
 		require($this->viewRoot . 'template/' . $this->template . '.php');
 	}
 	
+	protected function notFound()
+	{
+		$this->render('frontend/404');
+	}
+	
 }
