@@ -23,4 +23,9 @@ switch($p)
 	$controller = new master\controller\PostsController();
 	$controller->posts();
 	break;
+	
+	case 'single' :
+	$controller = new master\controller\PostsController();
+	$controller->singlePost();
+	break;
 }
