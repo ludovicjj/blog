@@ -58,5 +58,20 @@ class MysqlDatabase
 		
 		return $data;
 	}
+	
+	public function prepare($statement, $options, $one = false)
+	{
+		$req = $this->getPDO()->prepare($statement);
+		$req->execute($options);
+		if($one)
+		{
+			$data = $req->fetch(PDO::FETCH_ASSOC);
+		}
+		else
+		{
+			$data = $req->fetchAll(PDO::FETCH_ASSOC);
+		}
+		return $data;
+	}
 
 }

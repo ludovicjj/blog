@@ -38,4 +38,26 @@ class PostsController extends Controller
 	{
 		$this->render('frontend/index');
 	}
+	
+	public function singlePost()
+	{
+		if(isset($_GET['id']))
+		{
+			$master = MasterFactory::getInstance();
+			$req = $master->getTable('posts')->postWithId($_GET['id']);
+			if($req === false)
+			{
+				$this->notFound();
+			}
+			else
+			{
+				$post = $master->getTable('posts')->getEntity($req);
+				$this->render('frontend/single', compact('post'));
+			}
+		}
+		else
+		{
+			$this->notFound();
+		}
+	}
 }

@@ -32,4 +32,19 @@ class PostsTable extends Table
 		);
 		return $req;
 	}
+	
+	/** function postWithId
+	* @return array
+	*/
+	public function postWithId($id)
+	{
+		$req = $this->db->prepare(
+		'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
+		MONTH(date_post) AS month, DAY(date_post) AS day, YEAR(date_post) AS year, DATE_FORMAT(date_post, \'%H:%i:%s\') AS time
+		FROM '. $this->table .'
+		WHERE id = ?',
+		[$id], true
+		);
+		return $req;
+	}
 }
