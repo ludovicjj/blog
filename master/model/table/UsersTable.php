@@ -21,4 +21,12 @@ class UsersTable extends Table
 		
 		return $req;
 	}
+	
+	public function addUser($username, $password, $mail)
+	{
+		$req = $this->db->prepare(
+		'INSERT INTO '. $this->table .' SET username = ?, password = ?, mail = ?',
+		[$username, $password, $mail]
+		);
+	}
 }
