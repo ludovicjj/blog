@@ -14,4 +14,13 @@
 		<br>
 		<button class="btn btn-primary">Envoyer</button>
 	</form>
+	
+<?php
+if($error !== null)
+{
+	$action = ($error) ? '<div class="alert alert-danger">'. $message .'</div>' : '<div class="alert alert-success">'. $message .'</div>';
+	
+	echo $action;
+}
+?>
 </div>
