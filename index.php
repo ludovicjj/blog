@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require ('master/Autoloader.php');
 master\Autoloader::register();
 
