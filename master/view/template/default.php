@@ -44,6 +44,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.php?p=index">Accueil</a></li>
 			<li><a href="index.php?p=posts">Articles</a></li>
+			<li><a href="index.php?p=register">S'inscrire</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
