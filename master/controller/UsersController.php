@@ -8,6 +8,6 @@ class UsersController extends Controller
 {
 	public function register()
 	{
-		
+		$this->render('frontend/register');
 	}
 }
