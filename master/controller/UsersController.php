@@ -6,5 +6,8 @@ use \master\model\MasterFactory;
 
 class UsersController extends Controller
 {
-	
+	public function register()
+	{
+		
+	}
 }
