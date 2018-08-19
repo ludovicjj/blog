@@ -3,11 +3,17 @@ namespace master\model\entity;
 
 class UsersEntity extends Entity
 {
+    private $id;
     private $username;
     private $password;
     private $mail;
+    private $statut;
 	
     //getter
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getUsername()
     {
         return $this->username;
@@ -20,8 +26,19 @@ class UsersEntity extends Entity
     {
         return $this->mail;
     }
+    public function getStatut()
+    {
+        return $this->statut;
+    }
 	
     //Setter
+    public function setId($id)
+    {
+        $id = (int) $id;
+        if ($id > 0) {
+            $this->id = $id;
+        }
+    }
     public function setUsername($username)
     {
         if (is_string($username)) {
@@ -38,6 +55,13 @@ class UsersEntity extends Entity
     {
         if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $mail)) {
             $this->mail = $mail;
+        }
+    }
+    public function setStatut($statut)
+    {
+        $statut = (int) $statut;
+        if ($statut > 0) {
+            $this->statut = $statut;
         }
     }
 }
