@@ -62,7 +62,15 @@ class MysqlDatabase
 	public function prepare($statement, $options, $one = false)
 	{
 		$req = $this->getPDO()->prepare($statement);
-		$req->execute($options);
+		$res = $req->execute($options);
+		if(
+			strpos($statement, 'UPDATE') === 0 ||
+			strpos($statement, 'INSERT') === 0 ||
+			strpos($statement, 'DELETE') === 0
+		)
+		{
+			return $res;
+		}
 		if($one)
 		{
 			$data = $req->fetch(PDO::FETCH_ASSOC);
