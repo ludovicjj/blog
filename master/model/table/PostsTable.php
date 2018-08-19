@@ -24,7 +24,7 @@ class PostsTable extends Table
 	{
 		$req = $this->db->prepareWithLimit(
 		'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
-		MONTH(date_post) AS month, DAY(date_post) AS day, YEAR(date_post) AS year, DATE_FORMAT(date_post, \'%H:%i:%s\') AS time
+		MONTH(date_post) AS month, DAY(date_post) AS day, YEAR(date_post) AS year, DATE_FORMAT(date_post, \'%H:%i:%s\') AS hour
 		FROM '. $this->table .'
 		ORDER BY date_post DESC
 		LIMIT :limit, 4',
@@ -40,7 +40,7 @@ class PostsTable extends Table
 	{
 		$req = $this->db->prepare(
 		'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
-		MONTH(date_post) AS month, DAY(date_post) AS day, YEAR(date_post) AS year, DATE_FORMAT(date_post, \'%H:%i:%s\') AS time
+		MONTH(date_post) AS month, DAY(date_post) AS day, YEAR(date_post) AS year, DATE_FORMAT(date_post, \'%H:%i:%s\') AS hour
 		FROM '. $this->table .'
 		WHERE id = ?',
 		[$id], true
