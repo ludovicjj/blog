@@ -49,7 +49,7 @@ class UsersController extends Controller
             $message = 'Tous les champs sont obligatoires';
 			
             if (!empty($_POST['username'] && $_POST['password'])) {
-                $req = $users->login(
+                $req = $users->loginUser(
                     htmlspecialchars($_POST['username']),
 				    sha1($_POST['password'])
                 );
