@@ -33,6 +33,6 @@ class UsersController extends Controller
                 }
             }
         }
-        $this->render('frontend/register', compact('error','message'));
+        $this->render('frontend/register', compact('error', 'message'));
     }
 }
