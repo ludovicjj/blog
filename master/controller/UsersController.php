@@ -54,7 +54,7 @@ class UsersController extends Controller
 			
             if (!empty($_POST['username'] && $_POST['password'])) {
                 $req = $users->loginUser(
-                    htmlspecialchars($_POST['username']),
+                    $_POST['username'],
 				    sha1($_POST['password'])
                 );
                 if ($req) {
