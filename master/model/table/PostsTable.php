@@ -108,8 +108,12 @@ class PostsTable extends Table
             [$title, $intro, $content, $author, $image, $id]
         );
     }
-	
-    public function deletePostWithComments($id)
+
+    /*
+    * function deletePostAndComments
+    * @param int id
+    */	
+    public function deletePostAndComments($id)
     {
         $req = $this->db->prepare(
             'DELETE FROM '. $this->table .'
