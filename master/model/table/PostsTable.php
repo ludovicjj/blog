@@ -17,11 +17,11 @@ class PostsTable extends Table
     }
 	
     /*
-	* function all
+	* function allWithLimit
     * @param int
     * @return array
     */
-    public function all($limit)
+    public function allWithLimit($limit)
     {
 		$req = $this->db->prepareWithLimit(
             'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
