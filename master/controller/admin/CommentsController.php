@@ -20,7 +20,7 @@ class CommentsController extends AdminController
         $req_post = $master->getTable('posts')->postWithId($_GET['id']);
         $post = $master->getTable('posts')->getEntity($req_post);
 
-        $req_comments = $master->getTable('comments')->commentsByPostId($_GET['id']);
+        $req_comments = $master->getTable('comments')->commentsByPostWaiting($_GET['id']);
         $comments = array();
 			
         foreach ($req_comments as $data_comments) {
