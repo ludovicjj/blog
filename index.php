@@ -67,6 +67,10 @@ switch ($p) {
         $controller = new master\controller\admin\CommentsController();
         $controller->delete();
         break;
+    case 'admin.users.index':
+        $controller = new master\controller\admin\UsersController();
+        $controller->index();
+        break;
     default:
         $controller = new master\controller\PostsController();
         $controller->index();
