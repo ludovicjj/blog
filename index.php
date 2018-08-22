@@ -59,6 +59,14 @@ switch ($p) {
         $controller = new master\controller\admin\CommentsController();
         $controller->action();
         break;
+    case 'admin.comments.update':
+        $controller = new master\controller\admin\CommentsController();
+        $controller->update();
+        break;
+    case 'admin.comments.delete':
+        $controller = new master\controller\admin\CommentsController();
+        $controller->delete();
+        break;
     default:
         $controller = new master\controller\PostsController();
         $controller->index();
