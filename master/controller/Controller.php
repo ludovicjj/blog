@@ -1,30 +1,28 @@
 <?php
-
 namespace master\controller;
 
 class Controller
 {
-	protected $viewRoot;
-	protected $template = 'default';
+    protected $viewRoot;
+    protected $template = 'default';
 	
-	public function __construct()
-	{
-		$this->viewRoot = 'master/view/';
-	}
+    public function __construct()
+    {
+        $this->viewRoot = 'master/view/';
+    }
 	
-	protected function render($view, $variables = [])
-	{
-		extract($variables);
+    protected function render($view, $variables = [])
+    {
+        extract($variables);
 		
-		ob_start();
-		require($this->viewRoot . $view .'.php');
-		$content = ob_get_clean();
-		require($this->viewRoot . 'template/' . $this->template . '.php');
-	}
+        ob_start();
+        require($this->viewRoot . $view .'.php');
+        $content = ob_get_clean();
+        require($this->viewRoot . 'template/' . $this->template . '.php');
+    }
 	
-	protected function notFound()
-	{
-		$this->render('frontend/404');
-	}
-	
+    protected function notFound()
+    {
+        $this->render('frontend/404');
+    }
 }
