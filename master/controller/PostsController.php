@@ -43,7 +43,21 @@ class PostsController extends Controller
                 $this->notFound();
             } else {
                 $post = $master->getTable('posts')->getEntity($req);
-                $this->render('frontend/single', compact('post'));
+                $error = null;
+                $message = null;
+                if ($_POST) {
+                    $error = true;
+                    $message = 'Champs obligatoire';
+                    if ($_POST['content']) {
+                        $master->getTable('comments')->sendComment(
+                            $_POST['content'],
+                            $_GET['id'],
+                            $_SESSION['username']
+                        );
+                        header('Location:index.php?p=single&id='.$_GET['id'].'&info=1');
+                    }
+                }
+                $this->render('frontend/single', compact('post', 'error', 'message'));
             }
         } else {
             $this->notFound();
