@@ -39,6 +39,18 @@ switch ($p) {
         $controller = new master\controller\admin\PostsController();
         $controller->index();
         break;
+    case 'admin.posts.add':
+        $controller = new master\controller\admin\PostsController();
+        $controller->add();
+        break;
+    case 'admin.posts.edit':
+        $controller = new master\controller\admin\PostsController();
+        $controller->edit();
+        break;
+    case 'admin.posts.delete':
+        $controller = new master\controller\admin\PostsController();
+        $controller->delete();
+        break;
     default:
         $controller = new master\controller\PostsController();
         $controller->index();
