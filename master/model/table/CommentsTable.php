@@ -39,4 +39,21 @@ class CommentsTable extends Table
         );
         return $req;
     }
+	
+    /*
+    * function commentsByPosts
+    * @preturn array
+    */
+    public function commentsByPosts()
+    {
+        $req = $this->db->query(
+            'SELECT posts.id, posts.title, COUNT(comments.post_id) AS nb_comments
+            FROM '. $this->table .'
+            LEFT JOIN posts
+            ON posts.id = comments.post_id
+            WHERE comments.statut = 1
+            GROUP BY comments.post_id'
+        );
+        return $req;
+    }
 }
