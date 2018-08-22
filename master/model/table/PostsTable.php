@@ -73,4 +73,20 @@ class PostsTable extends Table
         );
         return $req;
     }
+	
+    /*
+	* function addPost
+    * @pram string title
+    * @pram string intro
+    * @pram string content
+    * @pram string author
+    * @pram string image
+    */
+    public function addPost($title, $intro, $content, $author, $image)
+    {
+        $req = $this->db->prepare(
+            'INSERT INTO '. $this->table .' SET title = ?, intro = ?, content = ?, author = ?, image = ?',
+            [$title, $intro, $content, $author, $image]
+        );
+    }
 }
