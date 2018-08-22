@@ -72,7 +72,7 @@ class PostsController extends AdminController
     {
         if (!empty($_POST)) {
             $master = MasterFactory::getInstance();
-            $post = $master->getTable('posts')->deletePostWithComments($_POST['id']);
+            $post = $master->getTable('posts')->deletePostAndComments($_POST['id']);
 			
             header('Location:index.php?p=admin.posts.index');		
         }
