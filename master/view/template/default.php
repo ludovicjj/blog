@@ -51,6 +51,20 @@
                 } else {
                     echo '<li><a href="index.php?p=login">Connexion</a></li>';
                 }
+                if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) {
+                ?>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="#">Administration<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.php?p=admin.posts.index">Articles</a></li>
+                            <li class="divider"></li>
+                            <li><a href="index.php?p=admin.comments.index">Commentaires</a></li>
+                            <li class="divider"></li>
+                            <li><a href="index.php?p=admin.users.index">Membres</a></li>
+                        </ul>
+                    </li>
+                <?php
+                }
             ?>
           </ul>
         </div><!--/.nav-collapse -->
