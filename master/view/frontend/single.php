@@ -7,6 +7,17 @@
 
 <div class="col-sm-12">
     <legend>Commentaires</legend>
+    <table class="table">
+    <?php foreach ($comments as $comments_list): ?>
+    <tr>
+        <td><?= $comments_list->getAuthor() ;?></td>
+        <td>
+            <p><?= $comments_list->getContent(); ?><p>
+            <small>Le <?= $comments_list->getDay() .' '. $comments_list->getMonth() .' '. $comments_list->getYear() . ' ' . $comments_list->getHour();?><small>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </table>
     <?php 
     if (isset($_SESSION['username'])) {
     ?>
