@@ -62,7 +62,7 @@ class CommentsTable extends Table
     * @param int post_id
     * @return array 
     */
-    public function commentsByPostWAiting($post_id)
+    public function commentsByPostWaiting($post_id)
     {
         $req = $this->db->prepare(
             'SELECT comments.id, comments.author, comments.content, comments.post_id AS postId
