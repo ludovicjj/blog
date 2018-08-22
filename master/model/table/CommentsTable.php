@@ -18,11 +18,11 @@ class CommentsTable extends Table
     }
 	
     /*
-    * function getComment
+    * function CommentsById
     * @param int post_id
     * @return array 
     */
-    public function commentById($post_id)
+    public function commentsById($post_id)
     {
         $req = $this->db->prepare(
             'SELECT comments.id, comments.content, comments.statut, comments.author,
