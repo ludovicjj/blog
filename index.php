@@ -55,6 +55,10 @@ switch ($p) {
         $controller = new master\controller\admin\CommentsController();
         $controller->index();
         break;
+    case 'admin.comments.action':
+        $controller = new master\controller\admin\CommentsController();
+        $controller->action();
+        break;
     default:
         $controller = new master\controller\PostsController();
         $controller->index();
