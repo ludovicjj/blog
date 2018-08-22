@@ -45,6 +45,13 @@
             <li><a href="index.php?p=index">Accueil</a></li>
 			<li><a href="index.php?p=posts">Articles</a></li>
 			<li><a href="index.php?p=register">S'inscrire</a></li>
+            <?php
+                if (isset($_SESSION['username'])) {
+                    echo '<li><a href="index.php?p=logout">Deconnexion</a></li>';
+                } else {
+                    echo '<li><a href="index.php?p=login">Connexion</a></li>';
+                }
+            ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

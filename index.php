@@ -12,22 +12,30 @@ if (isset($_GET['p'])) {
 
 switch ($p) {
     case 'index':
-	    $controller = new master\controller\PostsController();
-	    $controller->index();
-	    break;
+        $controller = new master\controller\PostsController();
+        $controller->index();
+        break;
     case 'posts':
-	    $controller = new master\controller\PostsController();
-	    $controller->posts();
-	    break;
+        $controller = new master\controller\PostsController();
+        $controller->posts();
+        break;
     case 'single':
-	    $controller = new master\controller\PostsController();
-	    $controller->singlePost();
-	    break;
+        $controller = new master\controller\PostsController();
+        $controller->singlePost();
+        break;
     case 'register':
-	    $controller = new master\controller\UsersController();
-	    $controller->register();
-	    break;
+        $controller = new master\controller\UsersController();
+        $controller->register();
+        break;
+    case 'login':
+        $controller = new master\controller\UsersController();
+        $controller->login();
+        break;
+    case 'logout':
+        $controller = new master\controller\UsersController();
+        $controller->logout();
+        break;
     default:
-	    $controller = new master\controller\PostsController();
-	    $controller->index();
+        $controller = new master\controller\PostsController();
+        $controller->index();
 }
