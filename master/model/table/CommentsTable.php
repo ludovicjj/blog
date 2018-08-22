@@ -18,11 +18,11 @@ class CommentsTable extends Table
     }
 	
     /*
-    * function CommentsById
+    * function commentsByPostValid
     * @param int post_id
     * @return array 
     */
-    public function commentsById($post_id)
+    public function commentsByPostValid($post_id)
     {
         $req = $this->db->prepare(
             'SELECT comments.id, comments.content, comments.statut, comments.author,
@@ -53,6 +53,25 @@ class CommentsTable extends Table
             ON posts.id = comments.post_id
             WHERE comments.statut = 1
             GROUP BY comments.post_id'
+        );
+        return $req;
+    }
+	
+    /*
+    * function commentsByPostWAiting
+    * @param int post_id
+    * @return array 
+    */
+    public function commentsByPostWAiting($post_id)
+    {
+        $req = $this->db->prepare(
+            'SELECT comments.id, comments.author, comments.content, comments.post_id AS postId
+            FROM '. $this->table .'
+            LEFT JOIN posts
+            ON comments.post_id = posts.id
+            WHERE comments.statut = 1
+            AND comments.post_id = ?',
+            [$post_id]
         );
         return $req;
     }
