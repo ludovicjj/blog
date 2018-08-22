@@ -50,4 +50,17 @@ class UsersTable extends Table
         );
         return $user;
     }
+	
+    /*
+    * function all
+    * @return array
+    */
+    public function all()
+    {
+        $req = $req = $this->db->query(
+            'SELECT users.id, users.username, users.mail, users.statut
+            FROM '. $this->table .''
+        );
+        return $req;
+    }
 }
