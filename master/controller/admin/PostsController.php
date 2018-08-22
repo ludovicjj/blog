@@ -40,4 +40,31 @@ class PostsController extends AdminController
 		}
         $this->render('backend/posts/add', compact('error', 'message'));
     }
+	
+    public function edit()
+    {
+        if (isset($_GET['id'])) {
+            $master = MasterFactory::getInstance();
+            $req_post = $master->getTable('posts')->postWithId($_GET['id']);
+            if ($req_post) {
+                $post = $master->getTable('posts')->getEntity($req_post);
+                if ($_POST) {
+                    $req = $master->getTable('posts')->addPostWithId(
+                        $_POST['title'],
+                        $_POST['intro'],
+                        $_POST['content'],
+                        $_POST['author'],
+                        $_POST['image'],
+                        $_GET['id']
+                    );
+                    header('Location:index.php?p=admin.posts.index');
+                }
+                $this->render('backend/posts/edit', compact('post'));
+            } else {
+                $this->notFound();
+            }
+        } else {
+            $this->notFound();
+        }
+    }
 }
