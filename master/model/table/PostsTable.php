@@ -89,4 +89,23 @@ class PostsTable extends Table
             [$title, $intro, $content, $author, $image]
         );
     }
+	
+    /*
+    * function addPostWithId
+    * @pram string title
+    * @pram string intro
+    * @pram string content
+    * @pram string author
+    * @pram string image
+    * @param int id
+    */
+    public function addPostWithId($title, $intro, $content, $author, $image, $id)
+    {
+        $req = $this->db->prepare(
+            'UPDATE '. $this->table .'
+            SET title = ?, intro = ?, content = ?, author = ?, image = ?, date_post = NOW()
+            WHERE id = ?',
+            [$title, $intro, $content, $author, $image, $id]
+        );
+    }
 }
