@@ -18,6 +18,14 @@
         <button class="btn btn-primary">Envoyer</button>
     </form>
     <?php
+	    if (isset($error)) {
+	        if ($error) {
+	            echo '<div class="alert alert-danger">'.$message.'</div>';
+	        }
+	    }
+	    elseif (isset($_GET['info'])) {
+	        echo '<div class="alert alert-success">Votre commentaire a été envoyé et sera publié après validation par l\'administration</div>';
+	    }
     } else {
         echo '<div class="alert alert-danger">Vous devez être connecté pour envoyer un commentaire</div>';
     }
