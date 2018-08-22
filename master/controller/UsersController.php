@@ -22,9 +22,13 @@ class UsersController extends Controller
                 if ($entity->getMail() === null) {
                     $message = 'Le format de l\'adresse email est incorrect';
                 } else {
-                    $req = $users->usersExists($entity->getUsername(), $entity->getMail());
+                    $req = $users->usersExists($_POST['username'], $_POST['mail']);
                     if ($req['user'] == 0) {
-                        $users->addUser($entity->getUsername(), $entity->getPassword(), $entity->getMail());
+                        $users->addUser(
+                            $_POST['username'],
+                            sha1($_POST['password']),
+                            $_POST['mail']
+                        );
                         $error = false;
                         $message = 'Inscription réussie';
                     } else {
@@ -50,7 +54,7 @@ class UsersController extends Controller
 			
             if (!empty($_POST['username'] && $_POST['password'])) {
                 $req = $users->loginUser(
-                    htmlspecialchars($_POST['username']),
+                    $_POST['username'],
 				    sha1($_POST['password'])
                 );
                 if ($req) {
