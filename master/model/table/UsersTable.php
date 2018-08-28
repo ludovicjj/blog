@@ -50,4 +50,41 @@ class UsersTable extends Table
         );
         return $user;
     }
+	
+    /*
+    * function all
+    * @return array
+    */
+    public function all()
+    {
+        $req = $req = $this->db->query(
+            'SELECT users.id, users.username, users.mail, users.statut
+            FROM '. $this->table .''
+        );
+        return $req;
+    }
+	
+    /** function upUser
+    * @param int id
+    */
+    public function upUser($id)
+    {
+        $req = $req = $this->db->prepare(
+            'UPDATE '. $this->table .' SET users.statut = 2
+            WHERE id = ?',
+            [$id]
+        );
+    }
+	
+    /** function downUser
+    * @param int id
+    */
+    public function downUser($id)
+    {
+        $req = $req = $this->db->prepare(
+            'UPDATE '. $this->table .' SET users.statut = 1
+            WHERE id = ?',
+            [$id]
+        );
+    }
 }
