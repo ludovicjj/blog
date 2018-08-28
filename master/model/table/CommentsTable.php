@@ -18,11 +18,11 @@ class CommentsTable extends Table
     }
 	
     /*
-    * function CommentsById
+    * function commentsByPostValid
     * @param int post_id
     * @return array 
     */
-    public function commentsById($post_id)
+    public function commentsByPostValid($post_id)
     {
         $req = $this->db->prepare(
             'SELECT comments.id, comments.content, comments.statut, comments.author,
@@ -38,5 +38,67 @@ class CommentsTable extends Table
             [$post_id]
         );
         return $req;
+    }
+	
+    /*
+    * function commentsByPosts
+    * @preturn array
+    */
+    public function commentsByPosts()
+    {
+        $req = $this->db->query(
+            'SELECT posts.id, posts.title, COUNT(comments.post_id) AS nb_comments
+            FROM '. $this->table .'
+            LEFT JOIN posts
+            ON posts.id = comments.post_id
+            WHERE comments.statut = 1
+            GROUP BY comments.post_id'
+        );
+        return $req;
+    }
+	
+    /*
+    * function commentsByPostWAiting
+    * @param int post_id
+    * @return array 
+    */
+    public function commentsByPostWaiting($post_id)
+    {
+        $req = $this->db->prepare(
+            'SELECT comments.id, comments.author, comments.content, comments.post_id AS postId
+            FROM '. $this->table .'
+            LEFT JOIN posts
+            ON comments.post_id = posts.id
+            WHERE comments.statut = 1
+            AND comments.post_id = ?',
+            [$post_id]
+        );
+        return $req;
+    }
+
+    /*
+    * function updateComment
+    * @param int id
+    */
+    public function updateComment($id)
+    {
+        $req = $this->db->prepare(
+            'UPDATE '. $this->table .' SET comments.statut = 2
+            WHERE comments.id = ?',
+            [$id]
+        );
+    }
+	
+    /*
+    * function deleteComment
+    * @param int id
+    */
+    public function deleteComment($id)
+    {
+        $req = $this->db->prepare(
+            'DELETE FROM '. $this->table .'
+            WHERE comments.id = ?',
+            [$id]
+        );
     }
 }

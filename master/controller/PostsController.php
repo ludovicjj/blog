@@ -39,7 +39,7 @@ class PostsController extends Controller
         if (isset($_GET['id'])) {
             $master = MasterFactory::getInstance();
             $req = $master->getTable('posts')->postWithId($_GET['id']);
-            $req_comment = $master->getTable('comments')->commentsById($_GET['id']);
+            $req_comment = $master->getTable('comments')->commentsByPostValid($_GET['id']);
             if ($req === false) {
                 $this->notFound();
             } else {

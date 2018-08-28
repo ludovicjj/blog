@@ -13,7 +13,7 @@
         <td><?= $comments_list->getAuthor() ;?></td>
         <td>
             <p><?= $comments_list->getContent(); ?><p>
-            <small>Le <?= $comments_list->getDay() .' '. $comments_list->getMonth() .' '. $comments_list->getYear() . ' ' . $comments_list->getHour();?><small>
+            <small>Le <?= $comments_list->getDay() .' '. $comments_list->getMonth() .' '. $comments_list->getYear() . ' à ' . $comments_list->getHour();?><small>
         </td>
     </tr>
     <?php endforeach; ?>
