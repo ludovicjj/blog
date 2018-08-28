@@ -17,11 +17,11 @@ class PostsTable extends Table
     }
 	
     /*
-	* function all
+	* function allWithLimit
     * @param int
     * @return array
     */
-    public function all($limit)
+    public function allWithLimit($limit)
     {
 		$req = $this->db->prepareWithLimit(
             'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
@@ -54,5 +54,76 @@ class PostsTable extends Table
             [$id], true
 		);
 		return $req;
+    }
+
+    /*
+	* function all
+    * @return array
+    */	
+    public function all()
+    {
+        $req = $this->db->query(
+            'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
+            MONTH(date_post) AS month,
+            DAY(date_post) AS day,
+            YEAR(date_post) AS year,
+            DATE_FORMAT(date_post, \'%H:%i:%s\') AS hour
+            FROM '. $this->table .'
+            ORDER BY date_post DESC'
+        );
+        return $req;
+    }
+	
+    /*
+	* function addPost
+    * @pram string title
+    * @pram string intro
+    * @pram string content
+    * @pram string author
+    * @pram string image
+    */
+    public function addPost($title, $intro, $content, $author, $image)
+    {
+        $req = $this->db->prepare(
+            'INSERT INTO '. $this->table .' SET title = ?, intro = ?, content = ?, author = ?, image = ?',
+            [$title, $intro, $content, $author, $image]
+        );
+    }
+	
+    /*
+    * function addPostWithId
+    * @pram string title
+    * @pram string intro
+    * @pram string content
+    * @pram string author
+    * @pram string image
+    * @param int id
+    */
+    public function addPostWithId($title, $intro, $content, $author, $image, $id)
+    {
+        $req = $this->db->prepare(
+            'UPDATE '. $this->table .'
+            SET title = ?, intro = ?, content = ?, author = ?, image = ?, date_post = NOW()
+            WHERE id = ?',
+            [$title, $intro, $content, $author, $image, $id]
+        );
+    }
+
+    /*
+    * function deletePostAndComments
+    * @param int id
+    */	
+    public function deletePostAndComments($id)
+    {
+        $req = $this->db->prepare(
+            'DELETE FROM '. $this->table .'
+            WHERE id = ?',
+            [$id]
+        );
+        $req = $this->db->prepare(
+            'DELETE FROM comments
+            WHERE post_id = ?',
+            [$id]
+        );
     }
 }

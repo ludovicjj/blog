@@ -19,7 +19,7 @@ class PostsController extends Controller
             $limit = 0;
         }
 		
-        $req_post = $master->getTable('posts')->all($limit);
+        $req_post = $master->getTable('posts')->allWithLimit($limit);
         $post = array();
         foreach ($req_post as $data) {
             $entity_post = $master->getTable('posts')->getEntity($data);
