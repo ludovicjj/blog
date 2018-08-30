@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require ('master/Autoloader.php');
+require('master/Autoloader.php');
 master\Autoloader::register();
 
 if (isset($_GET['p'])) {
