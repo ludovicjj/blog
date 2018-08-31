@@ -14,12 +14,12 @@ class MasterFactory
         }
         return self::$instance;
     }
-	
+    
     public function __construct()
     {
         $this->settings = require('config/config.php');
     }
-	
+    
     /*
     * function getSettings 
     * @param string
@@ -32,7 +32,7 @@ class MasterFactory
         }
         return null;
     }
-	
+    
     /*
     * function getDb 
     * @return object
@@ -49,7 +49,7 @@ class MasterFactory
         }
         return $this->db_instance;
     }
-	
+    
     /*
     * function getTable
     * @param string
