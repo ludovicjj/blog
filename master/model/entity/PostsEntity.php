@@ -142,8 +142,8 @@ class PostsEntity extends Entity
                 break;
             default:
                 $this->month = 'décembre';
-		}
-	}
+        }
+    }
     
     public function setDay($day)
     {
