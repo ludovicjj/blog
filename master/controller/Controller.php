@@ -12,7 +12,7 @@ class Controller
     {
         $this->viewRoot = 'master/view/';
     }
-	
+    
     protected function render($view, $variables = [])
     {
         extract($variables);
