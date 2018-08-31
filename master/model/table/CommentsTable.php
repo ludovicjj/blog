@@ -11,12 +11,12 @@ class CommentsTable extends Table
     */
     public function sendComment($content, $post_id, $author)
     {
-        $req = $this->db->prepare(
+        $this->db->prepare(
             'INSERT INTO '. $this->table .' SET content = ?, post_id = ?, author = ?',
             [$content, $post_id, $author]
         );
     }
-	
+    
     /*
     * function commentsByPostValid
     * @param int post_id
