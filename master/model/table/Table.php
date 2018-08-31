@@ -3,13 +3,13 @@ namespace master\model\table;
 
 class Table
 {
-    protected $db;
+    protected $database;
     protected $table;
     protected $entity;
     
-    public function __construct( \master\model\database\MysqlDatabase $db)
+    public function __construct($database)
     {
-        $this->db = $db;
+        $this->database = $database;
         
         if ($this->table === null) {
             $class_name = (get_class($this));
@@ -19,7 +19,7 @@ class Table
             $this->table = $resultat;
         }
     }
-	
+    
     public function getEntity($array)
     {
         $class_name = get_class($this);
