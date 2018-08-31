@@ -20,8 +20,8 @@ class UsersTable extends Table
         );
         return $req;
     }
-	
-	/*
+    
+    /*
     * function addUser
     * @param string username
     * @param string password
@@ -29,7 +29,7 @@ class UsersTable extends Table
     */
     public function addUser($username, $password, $mail)
     {
-        $req = $this->db->prepare(
+        $this->db->prepare(
             'INSERT INTO '. $this->table .' SET username = ?, password = ?, mail = ?',
             [$username, $password, $mail]
         );
@@ -67,24 +67,24 @@ class UsersTable extends Table
     /** function upUser
     * @param int id
     */
-    public function upUser($id)
+    public function upUser($id_user)
     {
         $req = $req = $this->db->prepare(
             'UPDATE '. $this->table .' SET users.statut = 2
             WHERE id = ?',
-            [$id]
+            [$id_user]
         );
     }
 	
     /** function downUser
     * @param int id
     */
-    public function downUser($id)
+    public function downUser($id_user)
     {
         $req = $req = $this->db->prepare(
             'UPDATE '. $this->table .' SET users.statut = 1
             WHERE id = ?',
-            [$id]
+            [$id_user]
         );
     }
 }
