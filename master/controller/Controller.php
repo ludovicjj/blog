@@ -1,14 +1,20 @@
 <?php
 namespace master\controller;
 
+use \master\model\MasterFactory;
+
 class Controller
 {
     protected $viewRoot;
     protected $template = 'default';
+    protected $master;
 	
     public function __construct()
     {
         $this->viewRoot = 'master/view/';
+        if ($this->master === null) {
+            $this->master = MasterFactory::getInstance();
+        }
     }
 	
     protected function render($view, $variables = [])
