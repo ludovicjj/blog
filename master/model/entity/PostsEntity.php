@@ -9,21 +9,20 @@ class PostsEntity extends Entity
     private $content;
     private $author;
     private $image;
-	
     private $month;
     private $day;
     private $year;
     private $hour;
-	
+    
     /*
     * function getUrl
     * @return string
     */
     public function getUrl()
     {
-        return $url = 'index.php?p=single&id=' . $this->getId();
+        return 'index.php?p=single&id=' . $this->getId();
     }
-	
+    
     //getter
     public function getId()
     {
@@ -36,7 +35,7 @@ class PostsEntity extends Entity
     public function getIntro()
     {
         return $this->intro;
-	}
+    }
     public function getContent()
     {
         return $this->content;
@@ -49,7 +48,6 @@ class PostsEntity extends Entity
     {
         return $this->image;
     }
-	
     public function getMonth()
     {
         return $this->month;
@@ -60,13 +58,13 @@ class PostsEntity extends Entity
     }
     public function getYear()
     {
-		return $this->year;
+        return $this->year;
     }
     public function getHour()
     {
         return $this->hour;
     }
-	
+    
     //Setter
     public function setId($id)
     {
@@ -76,7 +74,7 @@ class PostsEntity extends Entity
         }
     }
     public function setTitle($title)
-	{
+    {
         if (is_string($title)) {
             $this->title = $title;
         }
@@ -144,9 +142,9 @@ class PostsEntity extends Entity
                 break;
             default:
                 $this->month = 'décembre';
-		}
-	}
-	
+        }
+    }
+    
     public function setDay($day)
     {
         $day = (int) $day;

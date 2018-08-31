@@ -25,6 +25,6 @@
 
 <?php
 if (isset($error) && $error === true) {
-	echo '<div class="alert alert-danger">'.$message.'</div>';
+    echo '<div class="alert alert-danger">'.$message.'</div>';
 }
 ?>
