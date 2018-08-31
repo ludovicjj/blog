@@ -40,7 +40,7 @@ class MasterFactory
     private function getDb()
     {
         if ($this->db_instance === null) {
-                $this->db_instance = new \master\model\database\MysqlDatabase(
+            $this->db_instance = new \master\model\database\MysqlDatabase(
                 $this->getSettings('db_user'),
                 $this->getSettings('db_pass'),
                 $this->getSettings('db_host'),
