@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($posts as $posts_list): ?>
+    <?php foreach ($posts as $posts_list) : ?>
     <tr>
         <td><?= $posts_list->getId(); ?></td>
         <td><?= $posts_list->getTitle(); ?></td>
