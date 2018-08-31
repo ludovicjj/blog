@@ -11,7 +11,7 @@ class CommentsTable extends Table
     */
     public function sendComment($content, $post_id, $author)
     {
-        $this->db->prepare(
+        $this->database->prepare(
             'INSERT INTO '. $this->table .' SET content = ?, post_id = ?, author = ?',
             [$content, $post_id, $author]
         );
@@ -24,7 +24,7 @@ class CommentsTable extends Table
     */
     public function commentsByPostValid($post_id)
     {
-        $req = $this->db->prepare(
+        $req = $this->database->prepare(
             'SELECT comments.id, comments.content, comments.statut, comments.author,
             comments.post_id AS postId,
             MONTH(date_comment) AS month,
@@ -46,7 +46,7 @@ class CommentsTable extends Table
     */
     public function commentsByPosts()
     {
-        $req = $this->db->query(
+        $req = $this->database->query(
             'SELECT posts.id, posts.title, COUNT(comments.post_id) AS nb_comments
             FROM '. $this->table .'
             LEFT JOIN posts
@@ -64,7 +64,7 @@ class CommentsTable extends Table
     */
     public function commentsByPostWaiting($post_id)
     {
-        $req = $this->db->prepare(
+        $req = $this->database->prepare(
             'SELECT comments.id, comments.author, comments.content, comments.post_id AS postId
             FROM '. $this->table .'
             LEFT JOIN posts
@@ -82,7 +82,7 @@ class CommentsTable extends Table
     */
     public function updateComment($id_comment)
     {
-        $this->db->prepare(
+        $this->database->prepare(
             'UPDATE '. $this->table .' SET comments.statut = 2
             WHERE comments.id = ?',
             [$id_comment]
@@ -95,7 +95,7 @@ class CommentsTable extends Table
     */
     public function deleteComment($id_comment)
     {
-        $this->db->prepare(
+        $this->database->prepare(
             'DELETE FROM '. $this->table .'
             WHERE comments.id = ?',
             [$id_comment]
