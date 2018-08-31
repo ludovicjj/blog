@@ -63,7 +63,7 @@ class UsersTable extends Table
         );
         return $req;
     }
-	
+    
     /** function upUser
     * @param int id
     */
@@ -75,7 +75,7 @@ class UsersTable extends Table
             [$id_user]
         );
     }
-	
+    
     /** function downUser
     * @param int id
     */
