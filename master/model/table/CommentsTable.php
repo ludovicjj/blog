@@ -39,10 +39,10 @@ class CommentsTable extends Table
         );
         return $req;
     }
-	
+    
     /*
     * function commentsByPosts
-    * @preturn array
+    * @return array
     */
     public function commentsByPosts()
     {
@@ -56,7 +56,7 @@ class CommentsTable extends Table
         );
         return $req;
     }
-	
+    
     /*
     * function commentsByPostWAiting
     * @param int post_id
@@ -75,30 +75,30 @@ class CommentsTable extends Table
         );
         return $req;
     }
-
+    
     /*
     * function updateComment
     * @param int id
     */
-    public function updateComment($id)
+    public function updateComment($id_comment)
     {
-        $req = $this->db->prepare(
+        $this->db->prepare(
             'UPDATE '. $this->table .' SET comments.statut = 2
             WHERE comments.id = ?',
-            [$id]
+            [$id_comment]
         );
     }
-	
+    
     /*
     * function deleteComment
     * @param int id
     */
-    public function deleteComment($id)
+    public function deleteComment($id_comment)
     {
-        $req = $this->db->prepare(
+        $this->db->prepare(
             'DELETE FROM '. $this->table .'
             WHERE comments.id = ?',
-            [$id]
+            [$id_comment]
         );
     }
 }
