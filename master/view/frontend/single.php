@@ -8,17 +8,22 @@
 <div class="col-sm-12">
     <legend>Commentaires</legend>
     <table class="table">
-    <?php foreach ($comments as $comments_list): ?>
+    <?php foreach ($comments as $comments_list) : ?>
     <tr>
         <td><?= $comments_list->getAuthor() ;?></td>
         <td>
             <p><?= $comments_list->getContent(); ?><p>
-            <small>Le <?= $comments_list->getDay() .' '. $comments_list->getMonth() .' '. $comments_list->getYear() . ' à ' . $comments_list->getHour();?><small>
+            <small>
+                Le <?= $comments_list->getDay() .
+                ' '. $comments_list->getMonth() .
+                ' '. $comments_list->getYear() .
+                ' à ' . $comments_list->getHour();?>
+            <small>
         </td>
     </tr>
     <?php endforeach; ?>
     </table>
-    <?php 
+    <?php
     if (isset($_SESSION['username'])) {
     ?>
     <form method="post" class="form-group">
@@ -29,14 +34,15 @@
         <button class="btn btn-primary">Envoyer</button>
     </form>
     <?php
-	    if (isset($error)) {
-	        if ($error) {
-	            echo '<div class="alert alert-danger">'.$message.'</div>';
-	        }
-	    }
-	    elseif (isset($_GET['info'])) {
-	        echo '<div class="alert alert-success">Votre commentaire a été envoyé et sera publié après validation par l\'administration</div>';
-	    }
+    if (isset($error)) {
+        if ($error) {
+            echo '<div class="alert alert-danger">'.$message.'</div>';
+        }
+    } elseif (isset($_GET['info'])) {
+        echo '<div class="alert alert-success">';
+        echo 'Votre commentaire a été envoyé et sera publié après validation par l\'administration';
+        echo '</div>';
+    }
     } else {
         echo '<div class="alert alert-danger">Vous devez être connecté pour envoyer un commentaire</div>';
     }
