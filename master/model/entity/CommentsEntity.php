@@ -127,7 +127,6 @@ class CommentsEntity extends Entity
                 $this->month = 'décembre';
         }
     }
-	
     public function setDay($day)
     {
         $day = (int) $day;
