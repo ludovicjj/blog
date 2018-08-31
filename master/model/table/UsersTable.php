@@ -34,7 +34,7 @@ class UsersTable extends Table
             [$username, $password, $mail]
         );
     }
-	
+
     /*
     * function loginUser
     * @param string username
