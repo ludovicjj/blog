@@ -5,17 +5,6 @@ use \master\model\MasterFactory;
 
 class PostsController extends Controller
 {
-    private $page;
-    
-    public function __construct()
-    {
-        parent::__construct();
-        if (isset($_GET['page'])) {
-            return $this->page = ($_GET['page']* 4) - 4;
-        }
-        return $this->page = 0;
-    }
-    
     public function posts()
     {
         $master = MasterFactory::getInstance();
@@ -26,7 +15,7 @@ class PostsController extends Controller
         
         if (isset($_GET['page'])) {
             $limit = ($_GET['page'] * 4) - 4;
-		} else {
+        } else {
             $limit = 0;
         }
         
