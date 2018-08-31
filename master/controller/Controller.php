@@ -22,7 +22,7 @@ class Controller
         $content = ob_get_clean();
         require($this->viewRoot . 'template/' . $this->template . '.php');
     }
-	
+    
     protected function notFound()
     {
         $this->render('frontend/404');
