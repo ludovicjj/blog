@@ -16,31 +16,35 @@ class PostsController extends AdminController
         }
         $this->render('backend/posts/index', compact('posts'));
     }
-
+    
     public function add()
     {
         $master = MasterFactory::getInstance();
-		$error = null;
-		$message = null;
-
-		if ($_POST) {
-			$error = true;
-			$message = 'Tous les champs sont obligatoires';
-			
-			if (!empty($_POST['title'] && $_POST['intro'] && $_POST['content'] && $_POST['author'] && $_POST['image'])) {
-				$req_posts = $master->getTable('posts')->addPost(
-					$_POST['title'],
-					$_POST['intro'],
-					$_POST['content'],
-					$_POST['author'],
-					$_POST['image']
-				);
-				header('Location:index.php?p=admin.posts.index');
-			}
-		}
+        $error = null;
+        $message = null;
+        
+        if ($_POST) {
+            $error = true;
+            $message = 'Tous les champs sont obligatoires';
+            
+            if (!empty($_POST['title'] &&
+                $_POST['intro'] &&
+                $_POST['content'] &&
+                $_POST['author'] &&
+                $_POST['image'])) {
+                $master->getTable('posts')->addPost(
+                    $_POST['title'],
+                    $_POST['intro'],
+                    $_POST['content'],
+                    $_POST['author'],
+                    $_POST['image']
+                );
+                header('Location:index.php?p=admin.posts.index');
+            }
+        }
         $this->render('backend/posts/add', compact('error', 'message'));
     }
-	
+    
     public function edit()
     {
         if (isset($_GET['id'])) {
@@ -49,7 +53,7 @@ class PostsController extends AdminController
             if ($req_post) {
                 $post = $master->getTable('posts')->getEntity($req_post);
                 if ($_POST) {
-                    $req = $master->getTable('posts')->addPostWithId(
+                    $master->getTable('posts')->addPostWithId(
                         $_POST['title'],
                         $_POST['intro'],
                         $_POST['content'],
@@ -60,21 +64,18 @@ class PostsController extends AdminController
                     header('Location:index.php?p=admin.posts.index');
                 }
                 $this->render('backend/posts/edit', compact('post'));
-            } else {
-                $this->notFound();
             }
-        } else {
             $this->notFound();
         }
+        $this->notFound();
     }
-
+    
     public function delete()
     {
         if (!empty($_POST)) {
             $master = MasterFactory::getInstance();
-            $post = $master->getTable('posts')->deletePostAndComments($_POST['id']);
-			
-            header('Location:index.php?p=admin.posts.index');		
+            $master->getTable('posts')->deletePostAndComments($_POST['id']);
+            header('Location:index.php?p=admin.posts.index');
         }
-    }	
+    }
 }
