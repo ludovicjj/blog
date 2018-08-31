@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($users as $users_list): ?>
+    <?php foreach ($users as $users_list) : ?>
         <tr>
             <td><?= $users_list->getUsername();?></td>
             <td><?= $users_list->getMail();?></td>
