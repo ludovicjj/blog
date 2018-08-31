@@ -11,7 +11,7 @@ class UsersTable extends Table
     */
     public function usersExists($username, $mail)
     {
-        $req = $this->db->prepare(
+        $req = $this->database->prepare(
             'SELECT COUNT(*) AS user
             FROM '. $this->table .'
             WHERE username = ? OR mail = ?',
@@ -29,7 +29,7 @@ class UsersTable extends Table
     */
     public function addUser($username, $password, $mail)
     {
-        $this->db->prepare(
+        $this->database->prepare(
             'INSERT INTO '. $this->table .' SET username = ?, password = ?, mail = ?',
             [$username, $password, $mail]
         );
@@ -43,7 +43,7 @@ class UsersTable extends Table
     */
     public function loginUser($username, $password)
     {
-        $user = $this->db->prepare(
+        $user = $this->database->prepare(
             'SELECT * FROM '.$this->table .' WHERE username = ? AND password = ?',
             [$username, $password],
             true
@@ -57,7 +57,7 @@ class UsersTable extends Table
     */
     public function all()
     {
-        $req = $req = $this->db->query(
+        $req = $req = $this->database->query(
             'SELECT users.id, users.username, users.mail, users.statut
             FROM '. $this->table .''
         );
@@ -69,7 +69,7 @@ class UsersTable extends Table
     */
     public function upUser($id_user)
     {
-        $req = $req = $this->db->prepare(
+        $req = $req = $this->database->prepare(
             'UPDATE '. $this->table .' SET users.statut = 2
             WHERE id = ?',
             [$id_user]
@@ -81,7 +81,7 @@ class UsersTable extends Table
     */
     public function downUser($id_user)
     {
-        $req = $req = $this->db->prepare(
+        $req = $req = $this->database->prepare(
             'UPDATE '. $this->table .' SET users.statut = 1
             WHERE id = ?',
             [$id_user]
