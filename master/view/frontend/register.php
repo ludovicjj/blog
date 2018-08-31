@@ -16,8 +16,11 @@
 	
 <?php
 if ($error !== null) {
-    $action = ($error) ? '<div class="alert alert-danger">'. $message .'</div>' : '<div class="alert alert-success">'. $message .'</div>';
-    echo $action;
+    if ($error) {
+        echo '<div class="alert alert-danger">'. $message .'</div>';
+    } else {
+        echo '<div class="alert alert-success">'. $message .'</div>';
+    }
 }
 ?>
 </div>
