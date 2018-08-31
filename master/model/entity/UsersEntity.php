@@ -8,7 +8,7 @@ class UsersEntity extends Entity
     private $password;
     private $mail;
     private $statut;
-	
+    
     //getter
     public function getId()
     {
@@ -30,7 +30,7 @@ class UsersEntity extends Entity
     {
         return $this->statut;
     }
-	
+    
     //Setter
     public function setId($id)
     {
