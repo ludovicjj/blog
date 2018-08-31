@@ -5,6 +5,15 @@ use \master\model\MasterFactory;
 
 class PostsController extends Controller
 {
+    private $page;
+    
+    private function globalPage() {
+        if (isset($_GET['page'])) {
+            return $this->page = ($_GET['page']* 4) - 4;
+        }
+        return $this->page = 0;
+    }
+    
     public function posts()
     {
         $master = MasterFactory::getInstance();
