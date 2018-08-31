@@ -13,7 +13,7 @@ class CommentsEntity extends Entity
     private $day;
     private $year;
     private $hour;
-	
+    
     //getter
     public function getId()
     {
@@ -25,11 +25,11 @@ class CommentsEntity extends Entity
     }
     public function getStatut()
     {
-        return $this->statut;	
+        return $this->statut;
     }
     public function getPostId()
     {
-        return $this->post_id;	
+        return $this->post_id;
     }
     public function getAuthor()
     {
@@ -49,9 +49,9 @@ class CommentsEntity extends Entity
     }
     public function getHour()
     {
-        return $this->hour;		
+        return $this->hour;
     }
-
+    
     //setter
     public function setId($id)
     {
