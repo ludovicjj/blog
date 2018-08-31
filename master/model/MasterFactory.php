@@ -4,15 +4,15 @@ namespace master\model;
 class MasterFactory
 {
     private $settings = [];
-    private static $_instance;
+    private static $instance;
     private $db_instance;
-	
+    
     public static function getInstance()
     {
-        if (self::$_instance === null) {
-            self::$_instance = new MasterFactory();
+        if (self::$instance === null) {
+            self::$instance = new MasterFactory();
         }
-        return self::$_instance;
+        return self::$instance;
     }
 	
     public function __construct()
@@ -29,9 +29,8 @@ class MasterFactory
     {
         if (isset($this->settings[$key])) {
             return $this->settings[$key];
-        } else {
-            return null;
         }
+        return null;
     }
 	
     /*
@@ -41,12 +40,12 @@ class MasterFactory
     private function getDb()
     {
         if ($this->db_instance === null) {
-            $this->db_instance = new \master\model\database\MysqlDatabase(
-            $this->getSettings('db_user'), 
-            $this->getSettings('db_pass'),
-            $this->getSettings('db_host'),
-            $this->getSettings('db_name')
-			);
+                $this->db_instance = new \master\model\database\MysqlDatabase(
+                $this->getSettings('db_user'),
+                $this->getSettings('db_pass'),
+                $this->getSettings('db_host'),
+                $this->getSettings('db_name')
+            );
         }
         return $this->db_instance;
     }
