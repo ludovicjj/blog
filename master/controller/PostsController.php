@@ -7,7 +7,9 @@ class PostsController extends Controller
 {
     private $page;
     
-    private function globalPage() {
+    public function __construct()
+    {
+        parent::__construct();
         if (isset($_GET['page'])) {
             return $this->page = ($_GET['page']* 4) - 4;
         }
