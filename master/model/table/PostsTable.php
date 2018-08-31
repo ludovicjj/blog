@@ -15,7 +15,7 @@ class PostsTable extends Table
         );
         return $req;
     }
-	
+    
     /*
 	* function allWithLimit
     * @param int
@@ -23,7 +23,7 @@ class PostsTable extends Table
     */
     public function allWithLimit($limit)
     {
-		$req = $this->db->prepareWithLimit(
+        $req = $this->db->prepareWithLimit(
             'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
             MONTH(date_post) AS month,
             DAY(date_post) AS day,
@@ -33,17 +33,17 @@ class PostsTable extends Table
             ORDER BY date_post DESC
             LIMIT :limit, 4',
             $limit
-		);
-		return $req;
+        );
+        return $req;
     }
 	
     /*
     * function postWithId
     * @return array
     */
-    public function postWithId($id)
+    public function postWithId($id_posts)
     {
-		$req = $this->db->prepare(
+        $req = $this->db->prepare(
             'SELECT posts.id, posts.title, posts.intro, posts.content, posts.author, posts.image,
             MONTH(date_post) AS month,
             DAY(date_post) AS day,
@@ -51,15 +51,16 @@ class PostsTable extends Table
             DATE_FORMAT(date_post, \'%H:%i:%s\') AS hour
             FROM '. $this->table .'
             WHERE id = ?',
-            [$id], true
+            [$id_posts], 
+            true
 		);
 		return $req;
     }
 
     /*
-	* function all
+    * function all
     * @return array
-    */	
+    */
     public function all()
     {
         $req = $this->db->query(
@@ -84,7 +85,7 @@ class PostsTable extends Table
     */
     public function addPost($title, $intro, $content, $author, $image)
     {
-        $req = $this->db->prepare(
+        $this->db->prepare(
             'INSERT INTO '. $this->table .' SET title = ?, intro = ?, content = ?, author = ?, image = ?',
             [$title, $intro, $content, $author, $image]
         );
@@ -99,13 +100,13 @@ class PostsTable extends Table
     * @pram string image
     * @param int id
     */
-    public function addPostWithId($title, $intro, $content, $author, $image, $id)
+    public function addPostWithId($title, $intro, $content, $author, $image, $id_posts)
     {
         $req = $this->db->prepare(
             'UPDATE '. $this->table .'
             SET title = ?, intro = ?, content = ?, author = ?, image = ?, date_post = NOW()
             WHERE id = ?',
-            [$title, $intro, $content, $author, $image, $id]
+            [$title, $intro, $content, $author, $image, $id_posts]
         );
     }
 
@@ -113,17 +114,17 @@ class PostsTable extends Table
     * function deletePostAndComments
     * @param int id
     */	
-    public function deletePostAndComments($id)
+    public function deletePostAndComments($id_posts)
     {
         $req = $this->db->prepare(
             'DELETE FROM '. $this->table .'
             WHERE id = ?',
-            [$id]
+            [$id_posts]
         );
         $req = $this->db->prepare(
             'DELETE FROM comments
             WHERE post_id = ?',
-            [$id]
+            [$id_posts]
         );
     }
 }
