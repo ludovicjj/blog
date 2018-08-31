@@ -27,10 +27,10 @@ class PostsController extends AdminController
             $error = true;
             $message = 'Tous les champs sont obligatoires';
             
-            if (!empty($_POST['title'] && 
-                $_POST['intro'] && 
-                $_POST['content'] && 
-                $_POST['author'] && 
+            if (!empty($_POST['title'] &&
+                $_POST['intro'] &&
+                $_POST['content'] &&
+                $_POST['author'] &&
                 $_POST['image'])) {
                 $master->getTable('posts')->addPost(
                     $_POST['title'],
