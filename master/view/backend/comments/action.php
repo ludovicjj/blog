@@ -9,13 +9,19 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($comments as $comment_list): ?>
+    <?php foreach ($comments as $list) : ?>
         <tr>
-            <td><?= $comment_list->getAuthor();?></td>
-            <td><?= $comment_list->getContent();?></td>
+            <td><?= $list->getAuthor();?></td>
+            <td><?= $list->getContent();?></td>
             <td>
-                <a class="btn btn-success" href="index.php?p=admin.comments.update&id=<?= $comment_list->getId();?>&post_id=<?= $comment_list->getPostId();?>">Valider</a>
-                <a class="btn btn-danger" href="index.php?p=admin.comments.delete&id=<?= $comment_list->getId();?>&post_id=<?= $comment_list->getPostId();?>">Supprimer</a>
+                <a class="btn btn-success" 
+                href="index.php?p=admin.comments.update&id=<?= $list->getId();?>&post_id=<?= $list->getPostId();?>">
+                Valider
+                </a>
+                <a class="btn btn-danger" 
+                href="index.php?p=admin.comments.delete&id=<?= $list->getId();?>&post_id=<?= $list->getPostId();?>">
+                Supprimer
+                </a>
             </td>
         </tr>
     <?php endforeach; ?>
