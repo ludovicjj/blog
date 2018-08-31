@@ -74,7 +74,7 @@ class PostsTable extends Table
         );
         return $req;
     }
-	
+    
     /*
 	* function addPost
     * @pram string title
@@ -90,7 +90,7 @@ class PostsTable extends Table
             [$title, $intro, $content, $author, $image]
         );
     }
-	
+    
     /*
     * function addPostWithId
     * @pram string title
@@ -109,7 +109,7 @@ class PostsTable extends Table
             [$title, $intro, $content, $author, $image, $id_posts]
         );
     }
-
+    
     /*
     * function deletePostAndComments
     * @param int id
