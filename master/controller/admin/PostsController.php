@@ -64,11 +64,10 @@ class PostsController extends AdminController
                     header('Location:index.php?p=admin.posts.index');
                 }
                 $this->render('backend/posts/edit', compact('post'));
-            } 
-            $this->notFound();
-        } else {
+            }
             $this->notFound();
         }
+        $this->notFound();
     }
     
     public function delete()
