@@ -7,14 +7,14 @@ p {
 /*----------Nav-bar-----------------
 ----------------------------------*/
 .btn-connexion {
-   background-color: #ececec !important;
+   background-color: #ececec;
    border: 1px #e6e5e5 solid;
-   padding: 0.75rem 1rem !important;
+   padding: 0.75rem 1rem;
 }
 
 .btn-secondary:hover {
   color: #1a1a1a;
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   border: 1px #888888 solid;
 }
 
@@ -318,7 +318,7 @@ footer .social .social-cv a i {
         padding: 0.75rem 0 !important;
         background : none !important;
         border: none !important;
-        color: rgba(0, 0, 0, 0.3); !important;
+        color: rgba(0, 0, 0, 0.3) !important;
     }
     .admin .btn-width-valid {
         padding-left: 25px;
