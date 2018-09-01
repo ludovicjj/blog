@@ -18,6 +18,9 @@
     <!-- Custom styles for this template -->
     <link href="public/css/custom.css" rel="stylesheet">
     
+    <!-- Lien vers font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -86,6 +89,40 @@
       </div>
 
     </div><!-- /.container -->
+    
+    <!-- footer
+    ================================================== -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-6 information">
+                    <h3>Ludovic Jahan</h3>
+                    <p>06 63 13 91 19</p>
+                    <p>jahanlud@gmail.com</p>
+                </div>
+                <div class="col-md-6 social">
+                    <div class="social-cv">
+                        <a href="public/img/cv-ludovicJahan.pdf">
+                            <i class="fas fa-graduation-cap fa-2x"></i>
+                        </a>
+                    </div>
+                    <div class="social-github">
+                        <a href="https://github.com/ludovicjj">
+                            <i class="fab fa-github-square fa-3x"></i>
+                        </a>
+                    </div>
+                    <div class="social-linkdin">
+                        <a href="https://www.linkedin.com/in/ludovic-jahans/">
+                            <i class="fab fa-linkedin fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+			</div><!-- ./row -->
+
+		</div><!-- ./container -->
+	</footer>
+	<!-- ./Footer -->
     
     
     <!-- JS
