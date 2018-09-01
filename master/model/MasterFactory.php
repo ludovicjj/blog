@@ -8,7 +8,7 @@ class MasterFactory
     private $settings = [];
     private static $instance;
     private $db_instance;
-    private $request;
+    public $request;
     
     public static function getInstance()
     {
