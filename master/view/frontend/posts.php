@@ -29,7 +29,7 @@
                 if (isset($_GET['page'])) {
                     if ($_GET['page'] == $i +1) {
                          echo 'active';
-                    } 
+                    }
                 } else {
                     if ($i == 0) {
                         echo 'active';
