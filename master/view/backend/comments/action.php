@@ -18,11 +18,11 @@
                     <td><?= $list->getAuthor();?></td>
                     <td><?= $list->getContent();?></td>
                     <td>
-                        <a class="btn btn-success" 
+                        <a class="btn btn-success btn-width-valid" 
                         href="index.php?p=admin.comments.update&id=<?= $list->getId();?>&post_id=<?= $list->getPostId();?>">
                         Valider
                         </a>
-                        <a class="btn btn-danger" 
+                        <a class="btn btn-danger btn-width-delete" 
                         href="index.php?p=admin.comments.delete&id=<?= $list->getId();?>&post_id=<?= $list->getPostId();?>">
                         Supprimer
                         </a>
