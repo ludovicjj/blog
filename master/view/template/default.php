@@ -29,46 +29,52 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.php?p=index">Accueil</a></li>
-			<li><a href="index.php?p=posts">Articles</a></li>
-			<li><a href="index.php?p=register">S'inscrire</a></li>
-            <?php
-                if (isset($_SESSION['username'])) {
-                    echo '<li><a href="index.php?p=logout">Deconnexion</a></li>';
-                } else {
-                    echo '<li><a href="index.php?p=login">Connexion</a></li>';
-                }
-                if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) {
-                ?>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" href="#">Administration<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.php?p=admin.posts.index">Articles</a></li>
-                            <li class="divider"></li>
-                            <li><a href="index.php?p=admin.comments.index">Commentaires</a></li>
-                            <li class="divider"></li>
-                            <li><a href="index.php?p=admin.users.index">Membres</a></li>
-                        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.php?p=index">
+                <img src="public/img/logo-nb.png"/>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php?p=index">Accueil <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?p=posts">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.php?p=register">Inscription</a>
+                    </li>
+                    <?php if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) :?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Administration</a>
+                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; 
+                        will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="index.php?p=admin.posts.index">Articles</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?p=admin.comments.index">Commentaires</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?p=admin.users.index">Membres</a>
+                        </div>
+                    </li>
+                    <?php endif; ?>
+                </ul>
                 <?php
+                if (isset($_SESSION['username'])) {
+                    echo '<a class="btn btn-secondary my-2 my-sm-0 btn-connexion" href="index.php?p=logout">Deconnexion</a>';
+                } else {
+                    echo '<a class="btn btn-secondary my-2 my-sm-0 btn-connexion" href="index.php?p=login">Connexion</a>';
                 }
-            ?>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+                ?>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
