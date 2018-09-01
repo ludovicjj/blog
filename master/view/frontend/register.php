@@ -11,7 +11,8 @@
                 
                 <div class="form-group conteneur-form">
                     <label for="password">Mot de passe : </label>
-                    <input id="password" type="password" class="form-control champs" name="password" placeholder="Mot de passe">
+                    <input id="password" type="password" class="form-control champs"
+                    name="password" placeholder="Mot de passe">
                 </div>
                 
                 <div class="form-group conteneur-form">
