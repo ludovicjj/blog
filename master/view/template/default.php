@@ -9,17 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>Starter Template for Bootstrap</title>
-
+    
+    <title>Blog</title>
+    
     <!-- Bootstrap core CSS -->
     <link href="public/css/lux.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="public/css/custom.css" rel="stylesheet">
-
     
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -28,7 +26,7 @@
   </head>
 
   <body>
-
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php?p=index">
@@ -76,7 +74,7 @@
             </div>
         </div>
     </nav>
-
+    
     <div class="container">
 
       <div class="starter-template" style="padding-top: 70px;">
@@ -84,12 +82,12 @@
       </div>
 
     </div><!-- /.container -->
-
-
+    
+    
     <!-- JS
     ================================================== -->
-	<script src="public/js/jquery.min.js"></script>
+    <script src="public/js/jquery.min.js"></script>
     <script src="public/js/bootstrap.min.js"></script>
-	
+    
   </body>
 </html>
