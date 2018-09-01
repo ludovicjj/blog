@@ -21,11 +21,7 @@ class MasterFactory
     public function __construct()
     {
         $this->settings = require('config/config.php');
-        $this->request = new Request(array(
-        'post' => $_POST,
-        'get' => $_GET,
-        'session' =>$_SESSION
-        ));
+        $this->request = new Request();
     }
     
     /*
