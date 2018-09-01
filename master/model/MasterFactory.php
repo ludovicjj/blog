@@ -1,11 +1,14 @@
 <?php
 namespace master\model;
 
+use \master\model\request\Request;
+
 class MasterFactory
 {
     private $settings = [];
     private static $instance;
     private $db_instance;
+    private $request;
     
     public static function getInstance()
     {
@@ -18,6 +21,7 @@ class MasterFactory
     public function __construct()
     {
         $this->settings = require('config/config.php');
+        $this->request = new Request();
     }
     
     /*
