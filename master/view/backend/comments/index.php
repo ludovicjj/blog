@@ -17,7 +17,7 @@
                     <td><?= htmlspecialchars($data['title']);?></td>
                     <td><?= $data['nb_comments'];?></td>
                     <td>
-                        <a class="btn btn-success" href="index.php?p=admin.comments.action&id=<?=$data['id'];?>">Voir plus </a>
+                        <a class="btn btn-success btn-width" href="index.php?p=admin.comments.action&id=<?=$data['id'];?>">Voir plus </a>
                     </td>
                 </tr>
             <?php endforeach; ?>
