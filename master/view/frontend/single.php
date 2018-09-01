@@ -40,7 +40,7 @@
             <form method="post" class="form-group">
                 <div class="form-group conteneur-form">
                     <label for="content">Votre message</label>
-                    <textarea id="content" name="content" class="form-control champs"></textarea>
+                    <textarea id="content" name="content" class="form-control champs" placeholder="Votre message"></textarea>
                 </div>
                 <button class="btn btn-custom">Envoyer</button>
             </form>
