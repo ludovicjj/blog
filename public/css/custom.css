@@ -22,10 +22,10 @@ p {
 /*--------style formulaire----------
 ----------------------------------*/
 .champs {
-    border: 1px #888888 solid !important;
+    border: 1px #888888 solid;
 }
 .champs:focus {
-    border: 1px #ffffff solid !important;
+    border: 1px #ffffff solid;
 }
 .conteneur-form {
     position: relative;
@@ -36,13 +36,13 @@ p {
     position: absolute;
     top: -15px;
     left: 0px;
-    color: #000 !important;
+    color: #000;
 }
 /*----------style bouton------------
 ----------------------------------*/
 .btn-custom:hover {
     color: #1a1a1a;
-    background-color: #ffffff !important;
+    background-color: #ffffff;
     border: 1px #888888 solid;
 }
 .btn-custom {
@@ -203,8 +203,8 @@ footer .social a{
 footer .social .social-cv {
     display: inline-block;
     vertical-align: top;
-    width: 37.75px !important;
-    height: 37.8px !important;
+    width: 37.75px;
+    height: 37.8px;
     background: #fff;
     border-radius: 3px;
     margin-top: 3px;
@@ -315,10 +315,10 @@ footer .social .social-cv a i {
 
 @media (max-width: 992px) {
     .btn-connexion {
-        padding: 0.75rem 0 !important;
-        background : none !important;
-        border: none !important;
-        color: rgba(0, 0, 0, 0.3) !important;
+        padding: 0.75rem 0;
+        background : none;
+        border: none;
+        color: rgba(0, 0, 0, 0.3);
     }
     .admin .btn-width-valid {
         padding-left: 25px;
@@ -360,9 +360,9 @@ footer .social .social-cv a i {
     }
     .bloc-single .author-comment {
         display: block;
-        border-top: none !important;
-        padding-top: 0px !important;
-        padding-bottom: 0px !important;
+        border-top: none;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
     /*admin posts*/
     .admin .btn-width-success {
@@ -377,10 +377,10 @@ footer .social .social-cv a i {
         vertical-align:top;
     }
     .admin .admin-title {
-        font-size: 24px !important;
+        font-size: 24px;
     }
     .admin .admin-sub-title {
-        font-size: 18px !important;
+        font-size: 18px;
     }
     
 }
