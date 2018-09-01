@@ -271,16 +271,6 @@ footer .social .social-cv a i {
     width: 100px;
     text-align: center;
 }
-.bloc-single .bloc-comment {
-    position: relative;
-}
-.bloc-single .help-comment {
-    opacity: 0;
-    position: absolute;
-    top: -15px;
-    left: 0px;
-    color: #000 !important;
-}
 
 /*----------login-----------------*/
 .bloc-login legend{
@@ -354,7 +344,7 @@ footer .social .social-cv a i {
     /*single*/
     .bloc-single .author {
         display: block;
-        padding-bottom: 0px !important;
+        padding-bottom: 0px;
     }
     .bloc-single .author img{
         display: none;
