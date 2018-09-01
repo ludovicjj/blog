@@ -9,17 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>Starter Template for Bootstrap</title>
-
+    
+    <title>Blog</title>
+    
     <!-- Bootstrap core CSS -->
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="public/css/lux.min.css" rel="stylesheet">
+    
     <!-- Custom styles for this template -->
+    <link href="public/css/custom.css" rel="stylesheet">
     
-
+    <!-- Lien vers font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -28,62 +30,102 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.php?p=index">Accueil</a></li>
-			<li><a href="index.php?p=posts">Articles</a></li>
-			<li><a href="index.php?p=register">S'inscrire</a></li>
-            <?php
-                if (isset($_SESSION['username'])) {
-                    echo '<li><a href="index.php?p=logout">Deconnexion</a></li>';
-                } else {
-                    echo '<li><a href="index.php?p=login">Connexion</a></li>';
-                }
-                if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) {
-                ?>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" href="#">Administration<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.php?p=admin.posts.index">Articles</a></li>
-                            <li class="divider"></li>
-                            <li><a href="index.php?p=admin.comments.index">Commentaires</a></li>
-                            <li class="divider"></li>
-                            <li><a href="index.php?p=admin.users.index">Membres</a></li>
-                        </ul>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.php?p=index">
+                <img src="public/img/logo-nb.png"/>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php?p=index">Accueil <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?p=posts">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.php?p=register">Inscription</a>
+                    </li>
+                    <?php if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) :?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Administration</a>
+                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; 
+                        will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="index.php?p=admin.posts.index">Articles</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?p=admin.comments.index">Commentaires</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?p=admin.users.index">Membres</a>
+                        </div>
+                    </li>
+                    <?php endif; ?>
+                </ul>
                 <?php
+                if (isset($_SESSION['username'])) {
+                    echo '<a class="btn btn-secondary my-2 my-sm-0 btn-connexion" href="index.php?p=logout">';
+                    echo 'Deconnexion';
+                    echo '</a>';
+                } else {
+                    echo '<a class="btn btn-secondary my-2 my-sm-0 btn-connexion" href="index.php?p=login">';
+                    echo 'Connexion';
+                    echo '</a>';
                 }
-            ?>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+                ?>
+            </div>
+        </div>
     </nav>
-
-    <div class="container">
-
-      <div class="starter-template" style="padding-top: 70px;">
+    
+    <div class="starter-template">
         <?= $content; ?>
-      </div>
-
-    </div><!-- /.container -->
-
-
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 information">
+                    <h3>Ludovic Jahan</h3>
+                    <p>06 63 13 91 19</p>
+                    <p>jahanlud@gmail.com</p>
+                </div>
+                <div class="col-md-6 social">
+                    <div class="social-cv">
+                        <a href="public/img/cv-ludovicJahan.pdf">
+                            <i class="fas fa-graduation-cap fa-2x"></i>
+                        </a>
+                    </div>
+                    <div class="social-github">
+                        <a href="https://github.com/ludovicjj">
+                            <i class="fab fa-github-square fa-3x"></i>
+                        </a>
+                    </div>
+                    <div class="social-linkdin">
+                        <a href="https://www.linkedin.com/in/ludovic-jahans/">
+                            <i class="fab fa-linkedin fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- ./row -->
+        </div><!-- ./container -->
+    </footer>
+    
     <!-- JS
     ================================================== -->
-	<script src="public/js/jquery.min.js"></script>
-    <script src="public/js/bootstrap.min.js"></script>
-	
+    <script src="public/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+    crossorigin="anonymous"></script>
+    <script src="public/js/custom.js"></script>
   </body>
 </html>
