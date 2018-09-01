@@ -20,10 +20,11 @@ $(function() {
     });
 });
 
+
+
 $(function() {
     $(window).scroll(function(){
-        //format ordi
-        if(window.innerWidth >= 992) {
+        if (window.innerWidth >= 992) {
             if( $(window).scrollTop() > 530){
                 $( ".bloc-ps" ).animate({
                     opacity: "1",
@@ -52,14 +53,7 @@ $(function() {
                     left: "0px"
                 }, 700 );
             }
-        }
-    });
-});
-
-$(function() {
-    $(window).scroll(function(){
-        //format tablette
-        if(window.innerWidth < 992 && window.innerWidth >=  768) {
+        } else if (window.innerWidth < 992 && window.innerWidth >=  768) {
             if( $(window).scrollTop() > 530){
                 $( ".bloc-ps" ).animate({
                     opacity: "1",
@@ -90,14 +84,7 @@ $(function() {
                     left: "0px"
                 }, 700 );
             }  
-        }
-    });
-});
-
-$(function() {
-    $(window).scroll(function(){
-        //format smartphone
-        if(window.innerWidth < 768) {
+        } else if (window.innerWidth < 768) {
             if( $(window).scrollTop() > 530){
                 $( ".bloc-ps" ).animate({
                     opacity: "1",
@@ -137,6 +124,8 @@ $(function() {
         }
     });
 });
+
+
 
 
 $(function() {
