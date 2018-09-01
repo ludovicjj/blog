@@ -3,14 +3,16 @@ namespace master\model\request;
 
 class Request
 {
-    public $get;
-    public $post;
-    public $session;
-    
-    public function __construct($get = null, $post = null, $session = null)
+    public function get($key)
     {
-        $this->get = $get;
-        $this->post = $post;
-        $this->session = $session;
+        return $_GET[$key];
+    }
+    public function post($key)
+    {
+        return $_POST[$key];
+    }
+    public function session($key)
+    {
+        return $_SESSION[$key];
     }
 }
