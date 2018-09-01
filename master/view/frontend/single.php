@@ -6,7 +6,9 @@
                 <img src="<?= $post->getImage();?>"/>
             </div>
             <h1><?= $post->getTitle();?></h1>
-            <small>Par <?= $post->getAuthor();?>, le <?= $post->getDay() .' '.$post->getMonth().' '.$post->getYear();?></small>
+            <small>
+            Par <?= $post->getAuthor();?>, le <?= $post->getDay() .' '.$post->getMonth().' '.$post->getYear();?>
+            </small>
             <p class="single-intro"><?= $post->getIntro();?></p>
             <p><?= $post->getContent();?></p>
         </div>
@@ -16,7 +18,9 @@
             <table class="table">
             <?php foreach ($comments as $comments_list) : ?>
             <tr>
-                <td class="author"><img src="public/img/logo-user.png" alt="logo-user"/><?= $comments_list->getAuthor() ;?></td>
+                <td class="author">
+                    <img src="public/img/logo-user.png" alt="logo-user"/><?= $comments_list->getAuthor() ;?>
+                </td>
                 <td>
                     <small>
                         Le <?= $comments_list->getDay() .
