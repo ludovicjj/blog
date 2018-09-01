@@ -1,0 +1,393 @@
+body {
+    background-color: #000;
+}
+p {
+    color: #1a1a1a;
+}
+/*----------Nav-bar-----------------
+----------------------------------*/
+.btn-connexion {
+   background-color: #ececec !important;
+   border: 1px #e6e5e5 solid;
+   padding: 0.75rem 1rem !important;
+}
+
+.btn-secondary:hover {
+  color: #1a1a1a;
+  background-color: #ffffff !important;
+  border: 1px #888888 solid;
+}
+
+
+/*--------style formulaire----------
+----------------------------------*/
+.champs {
+    border: 1px #888888 solid !important;
+}
+.champs:focus {
+    border: 1px #ffffff solid !important;
+}
+.conteneur-form {
+    position: relative;
+    margin-top: 35px;
+}
+.conteneur-form label {
+    opacity: 0;
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    color: #000 !important;
+}
+/*----------style bouton------------
+----------------------------------*/
+.btn-custom:hover {
+    color: #1a1a1a;
+    background-color: #ffffff !important;
+    border: 1px #888888 solid;
+}
+.btn-custom {
+    background-color: #e6e5e5;
+    border: 1px #e6e5e5 solid;
+}
+
+/*----------Separateur--------------
+----------------------------------*/
+.separateur {
+    height: 1px;
+    border-bottom: 1px dotted #a7a7a7;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/*----------conteneur--------------
+----------------------------------*/
+.conteneur {
+    padding-top: 180px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
+}
+/*----------PAGE INDEX-----------*/ 
+.background-custom {
+    background-color: #ffffff;
+}   
+/*----------Bandeau---------------*/
+
+.bloc-bandeau{
+    margin-top: 120px;
+    padding: 0px;
+    height: 500px;
+    background-image:  url("../img/nuage-1500x1000.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.bloc-bandeau-intro{
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    text-align: center;
+}
+.bloc-bandeau-intro h1{
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 60px;
+    position: relative;
+    display: inline-block;
+}
+.bloc-bandeau-intro h1:before{
+    content:"";
+    top: 100%;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+}
+.bloc-bandeau-intro p{
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*----------Langage---------------*/
+.bloc-langage{
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+.bloc-langage .bloc-langage-intro p {
+    margin-top: 15px;
+}
+.bloc-langage .bloc-langage-bar p {
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+.bloc-langage .progress {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+}
+.bloc-langage .progress-bar {
+    background: #000;
+    padding-right: 0;
+}
+
+/*------------Contact-------------*/
+.bloc-contact {
+    padding-bottom: 40px;
+}
+.bloc-contact-intro {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.bloc-contact form .conteneur-form:first-child {
+    margin-top: 20px;
+}
+
+/*-----------logiciel------------*/
+.bloc-logiciel  .bloc-logiciel-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.bloc-logiciel .logiciel {
+    width: 120px;
+    height: 120px;
+    background: #e6e5e5;
+    margin-right: auto;
+    margin-left: auto;
+}
+.bloc-logiciel .logiciel .logo-logiciel{
+   margin: 10px 10px;
+}
+.bloc-logiciel .logiciel-text{
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+}
+.bloc-logiciel .logiciel-text h5{
+    text-transform: none;
+}
+.bloc-logiciel .bloc-ps, .bloc-logiciel .bloc-ai, .bloc-logiciel .bloc-id, .bloc-logiciel .bloc-wp, .bloc-logiciel .bloc-dw, .bloc-logiciel .bloc-ae{
+    position: relative;
+    opacity: 0;
+    left: -80px;
+}
+
+
+/*--------------footer-----------*/
+footer {
+    background: #000;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+footer .information h3 {
+    color: #ffffff;
+    text-transform: none;
+    font-weight: lighter;
+    font-size: 20px;
+}
+footer .information p {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #E6E5E5;
+}
+footer .social {
+    text-align: right;
+}
+footer .social a{
+   color: #fff;
+}
+footer .social .social-cv {
+    display: inline-block;
+    vertical-align: top;
+    width: 37.75px !important;
+    height: 37.8px !important;
+    background: #fff;
+    border-radius: 3px;
+    margin-top: 3px;
+    margin-right: 10px;
+    
+}
+footer .social .social-github {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+footer .social .social-linkdin {
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer .social .social-cv a i {
+    color: #000;
+    padding-top: 5px;
+}
+
+/*----------Posts-----------------*/
+.bloc-posts img {
+    width: 100%;
+}
+.bloc-posts .news {
+    position: relative;
+    height: auto;
+    padding-bottom: 60px;
+    margin-bottom: 50px;
+}
+.bloc-posts .news-image {
+    height: auto;
+}
+.bloc-posts .news-text {
+    position: absolute;
+    width: 70%;
+    background: #ffffff;
+    right: 0;
+    bottom: 0px;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+.bloc-posts .pagination li a{
+    background-color: #ececec;
+}
+
+/*----------Single-----------------*/
+.bloc-single .single-image {
+    margin-bottom: 30px;
+}
+.bloc-single .single-image  img{
+    width: 100%;
+}
+.bloc-single .single-intro {
+    font-weight: bold;
+    padding-top: 15px;
+}
+.bloc-single .author {
+    color: #000;
+    font-weight: bold;
+    word-break: break-all;
+    width: 100px;
+    text-align: center;
+}
+.bloc-single .bloc-comment {
+    position: relative;
+}
+.bloc-single .help-comment {
+    opacity: 0;
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    color: #000 !important;
+}
+
+/*----------login-----------------*/
+.bloc-login legend{
+    color: #1a1a1a;
+}
+/*----------register--------------*/
+.bloc-register legend {
+   color: #1a1a1a;
+}
+/*----------admin--------------*/
+.admin  .admin-title{
+    margin-bottom: 50px;
+    position: relative;
+}
+.admin legend {
+    color: #000;
+}
+.admin .admin-sub-title {
+    margin: 30px 0px;
+    text-transform: none;
+}
+.admin td {
+    color: #1a1a1a;
+}
+.admin .back-admin-index {
+    font-weight: bold;
+    margin-bottom: 25px;
+    display: block;
+}
+
+
+
+
+@media (max-width: 992px) {
+    .btn-connexion {
+        padding: 0.75rem 0 !important;
+        background : none !important;
+        border: none !important;
+        color: rgba(0, 0, 0, 0.3); !important;
+    }
+    .admin .btn-width-valid {
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-bottom: 15px;
+    }
+    .admin .btn-width-delete {
+        padding-left: 15px;
+        padding-right: 14px;
+    }
+    .admin .btn-width-admin {
+        margin-bottom: 15px;
+    }
+    .admin .btn-width-membre {
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bloc-bandeau-intro h1{
+        font-size: 45px;
+    }
+    /*post*/
+    .bloc-posts .news-text {
+        position: relative;
+        width: auto;
+    }
+    .bloc-posts .news {
+        padding-bottom: 0px;
+    }
+    /*single*/
+    .bloc-single .author {
+        display: block;
+        padding-bottom: 0px !important;
+    }
+    .bloc-single .author img{
+        display: none;
+    }
+    .bloc-single .author-comment {
+        display: block;
+        border-top: none !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+    /*admin posts*/
+    .admin .btn-width-success {
+        padding-right: 12px;
+        padding-left: 12px;
+        margin-bottom: 15px;
+        vertical-align:top;
+    }
+    .admin .btn-width{
+        padding-right: 10px;
+        padding-left: 10px;
+        vertical-align:top;
+    }
+    .admin .admin-title {
+        font-size: 24px !important;
+    }
+    .admin .admin-sub-title {
+        font-size: 18px !important;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    /*post*/
+    .bloc-posts .news-text h3 a{
+        font-size: 20px;
+    }
+}
