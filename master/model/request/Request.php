@@ -3,16 +3,29 @@ namespace master\model\request;
 
 class Request
 {
-    private function get($key)
+    private $get;
+    private $post;
+    private $session;
+    
+    public function get($key)
     {
-        return $_GET[$key];
+        if (isset($_GET[$key])) {
+            $this->get = $_GET[$key];
+            return $this->get;
+        }
     }
-    private function post($key)
+    public function post($key)
     {
-        return $_POST[$key];
+        if (isset($_POST[$key])) {
+            $this->post = $_POST[$key];
+            return $this->post;
+        }
     }
-    private function session($key)
+    public function session($key)
     {
-        return $_SESSION[$key];
+        if (isset($_SESSION[$key])) {
+            $this->session = $_SESSION[$key];
+            return $this->session;
+        }
     }
 }
