@@ -22,7 +22,8 @@
                     <td><?= $posts_list->getId(); ?></td>
                     <td><?= $posts_list->getTitle(); ?></td>
                     <td>
-                        <a href="index.php?p=admin.posts.edit&id=<?= $posts_list->getId(); ?>" class="btn btn-success btn-width-success">Modifier</a>
+                        <a href="index.php?p=admin.posts.edit&id=<?= $posts_list->getId(); ?>"
+                        class="btn btn-success btn-width-success">Modifier</a>
                         <form action="index.php?p=admin.posts.delete" style="display:inline;" method="post">
                             <input type="hidden" name="id" value="<?= $posts_list->getId();?>">
                             <button type="submit" class="btn btn-danger btn-width">Supprimer</button>

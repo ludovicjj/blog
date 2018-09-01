@@ -38,9 +38,11 @@
             if (isset($_SESSION['username'])) {
             ?>
             <form method="post" class="form-group">
+                <legend>Votre commentaire</legend>
                 <div class="form-group conteneur-form">
                     <label for="content">Votre message</label>
-                    <textarea id="content" name="content" class="form-control champs" placeholder="Votre message"></textarea>
+                    <textarea id="content" name="content" class="form-control champs"
+                    placeholder="Votre message"></textarea>
                 </div>
                 <button class="btn btn-custom">Envoyer</button>
             </form>

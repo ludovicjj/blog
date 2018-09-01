@@ -19,8 +19,11 @@
                     <td><?= $users_list->getMail();?></td>
                     <td>
                     <?php
-                    $statut = ($users_list->getStatut() == 1) ? '<strong>Membre</strong>' : '<strong>Administrateur</strong>';
-                    echo $statut;
+                    if ($users_list->getStatut() == 1) {
+                        echo 'Membre';
+                    } else {
+                        echo 'Administrateur';
+                    }
                     ?>
                     </td>
                     <td>
