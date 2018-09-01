@@ -31,6 +31,5 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-        <a class="btn btn-primary" href="index.php?p=admin.comments.index">Retour à l'index des commentaires</a>
     </div>
 </div>
