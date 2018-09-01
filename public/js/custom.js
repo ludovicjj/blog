@@ -17,7 +17,11 @@ $(function() {
                 paddingRight: "70%"
             }, 1500 );
         }
-        
+    });
+});
+
+$(function() {
+    $(window).scroll(function(){
         //format ordi
         if(window.innerWidth >= 992) {
             if( $(window).scrollTop() > 530){
@@ -34,7 +38,6 @@ $(function() {
                     left: "0px"
                 }, 700 );
             }
-            
             if( $(window).scrollTop() > 800){
                 $( ".bloc-wp" ).animate({
                     opacity: "1",
@@ -50,6 +53,11 @@ $(function() {
                 }, 700 );
             }
         }
+    });
+});
+
+$(function() {
+    $(window).scroll(function(){
         //format tablette
         if(window.innerWidth < 992 && window.innerWidth >=  768) {
             if( $(window).scrollTop() > 530){
@@ -83,7 +91,11 @@ $(function() {
                 }, 700 );
             }  
         }
-        
+    });
+});
+
+$(function() {
+    $(window).scroll(function(){
         //format smartphone
         if(window.innerWidth < 768) {
             if( $(window).scrollTop() > 530){
@@ -126,6 +138,7 @@ $(function() {
     });
 });
 
+
 $(function() {
     $( ".champs" ).keyup(function() {
         $(this).prev().animate({
@@ -133,7 +146,7 @@ $(function() {
             top : "-30px"
         }, 500);
         
-        if( $(this).val() == '') {
+        if( $(this).val() === "") {
             $(this).prev().animate({
                 opacity : "0",
                 top : "-15px"
@@ -182,5 +195,4 @@ $(function() {
             transform:  "rotate(" + 0 + "deg)"
         });
     });
-   
 });
