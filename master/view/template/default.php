@@ -19,7 +19,8 @@
     <link href="public/css/custom.css" rel="stylesheet">
     
     <!-- Lien vers font awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -82,21 +83,15 @@
         </div>
     </nav>
     
-    <div class="container">
-
-      <div class="starter-template" style="padding-top: 70px;">
+    <div class="starter-template">
         <?= $content; ?>
-      </div>
-
-    </div><!-- /.container -->
+    </div>
     
-    <!-- footer
-    ================================================== -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-md-6 information">
+    <footer>
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-6 information">
                     <h3>Ludovic Jahan</h3>
                     <p>06 63 13 91 19</p>
                     <p>jahanlud@gmail.com</p>
@@ -118,12 +113,9 @@
                         </a>
                     </div>
                 </div>
-			</div><!-- ./row -->
-
-		</div><!-- ./container -->
-	</footer>
-	<!-- ./Footer -->
-    
+            </div><!-- ./row -->
+        </div><!-- ./container -->
+    </footer>
     
     <!-- JS
     ================================================== -->
