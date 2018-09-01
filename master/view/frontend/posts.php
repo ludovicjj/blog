@@ -34,7 +34,7 @@
                     if ($i == 0) {
                         echo 'active';
                     }
-                }   
+                }
                 ?>">
                     <a class="page-link" href="index.php?p=posts&page=<?=$i+1;?>"><?= $i+1; ?></a>
                 </li>
