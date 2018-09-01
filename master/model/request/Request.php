@@ -13,6 +13,6 @@ class Request
     }
     public function session($key)
     {
-        return (isset($_SESSION[$key]) ? $_SESSION[$key] : null);
+        return $_SESSION[$key];
     }
 }
