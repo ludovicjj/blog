@@ -67,7 +67,8 @@ class UsersController extends Controller
                     
                     header('Location:index.php?p=index');
                 } else {
-                    $message = 'Identifiants incorrects<br/>Inscrivez vous en cliquant <a href="index.php?p=register">ici</a>';
+                    $message = 'Identifiants incorrects<br/>';
+                    $message .= 'Inscrivez vous en cliquant <a href="index.php?p=register">ici</a>';
                 }
             }
         }
