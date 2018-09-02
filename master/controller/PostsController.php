@@ -21,13 +21,16 @@ class PostsController extends Controller
         }
         
         $req_post = $master->getTable('posts')->allWithLimit($limit);
-        $post = array();
-        foreach ($req_post as $data) {
-            $entity_post = $master->getTable('posts')->getEntity($data);
-            $post[] = $entity_post;
+        if (empty($req_post)) {
+            $this->notFound();
+        } else {
+            $post = array();
+            foreach ($req_post as $data) {
+                $entity_post = $master->getTable('posts')->getEntity($data);
+                $post[] = $entity_post;
+            }
+            $this->render('frontend/posts', compact('paging', 'post'));
         }
-        
-        $this->render('frontend/posts', compact('paging', 'post'));
     }
     
     public function index()
