@@ -7,6 +7,7 @@ class Controller
 {
     protected $viewRoot;
     protected $template = 'default';
+    protected $title = 'blog';
     
     public function __construct()
     {
@@ -20,11 +21,23 @@ class Controller
         ob_start();
         require($this->viewRoot . $view .'.php');
         $content = ob_get_clean();
+        
+        $title = $this->getTitle();
         require($this->viewRoot . 'template/' . $this->template . '.php');
     }
     
     protected function notFound()
     {
         $this->render('frontend/404');
+    }
+    
+    protected function getTitle()
+    {
+        return $this->title;
+    }
+    
+    protected function setTitle($title)
+    {
+        return $this->title = $title;
     }
 }
