@@ -130,12 +130,12 @@ $(function() {
 
 $(function() {
     $( ".champs" ).keyup(function() { 
-        if($(this).val() !== '') {
+        if($(this).val() !== "") {
             $(this).prev().animate({
                 opacity : "1",
                 top : "-30px"
             }, 500); 
-        } else if ($(this).val() === '') {
+        } else if ($(this).val() === "") {
             $(this).prev().animate({
                 opacity : "0",
                 top : "-15px"
