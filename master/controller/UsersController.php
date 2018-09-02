@@ -46,14 +46,14 @@ class UsersController extends Controller
         $this->setTitle('Connexion');
         $master = MasterFactory::getInstance();
         $users = $master->getTable('users');
-		
+        
         $error = null;
         $message = null;
-		
+        
         if ($_POST) {
             $error = true;
             $message = 'Tous les champs sont obligatoires';
-			
+            
             if (!empty($_POST['username'] && $_POST['password'])) {
                 $req = $users->loginUser(
                     $_POST['username'],
@@ -61,10 +61,10 @@ class UsersController extends Controller
                 );
                 if ($req) {
                     $entity = $users->getEntity($req);
-					
+                    
                     $_SESSION['username'] = $entity->getUsername();
                     $_SESSION['statut'] = $entity->getStatut();
-					
+                    
                     header('Location:index.php?p=index');
                 } else {
                     $message = 'Identifiants incorrects<br/>Inscrivez vous en cliquant <a href="index.php?p=register">ici</a>';
@@ -73,8 +73,7 @@ class UsersController extends Controller
         }
         $this->render('frontend/login', compact('error', 'message'));
     }
-	
-	
+    
     public function logout()
     {
         session_destroy();
