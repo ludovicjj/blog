@@ -10,14 +10,14 @@ class UsersController extends Controller
         $this->setTitle('Inscription');
         $master = MasterFactory::getInstance();
         $users = $master->getTable('users');
-		
+        
         $error = null;
         $message = null;
-		
+        
         if ($_POST) {
             $error = true;
             $message = 'Tous les champs sont obligatoires';
-			
+            
             if (!empty($_POST['username'] && $_POST['password'] && $_POST['mail'])) {
                 $entity = $users->getEntity($_POST);
                 if ($entity->getMail() === null) {
@@ -57,7 +57,7 @@ class UsersController extends Controller
             if (!empty($_POST['username'] && $_POST['password'])) {
                 $req = $users->loginUser(
                     $_POST['username'],
-				    sha1($_POST['password'])
+                    sha1($_POST['password'])
                 );
                 if ($req) {
                     $entity = $users->getEntity($req);
