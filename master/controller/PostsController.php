@@ -7,6 +7,7 @@ class PostsController extends Controller
 {
     public function posts()
     {
+        $this->setTitle('Articles');
         $master = MasterFactory::getInstance();
         $req = $master->getTable('posts')->paging();
         
@@ -31,6 +32,7 @@ class PostsController extends Controller
     
     public function index()
     {
+        $this->setTitle('Accueil');
         $this->render('frontend/index');
     }
     
@@ -44,6 +46,7 @@ class PostsController extends Controller
                 $this->notFound();
             } else {
                 $post = $master->getTable('posts')->getEntity($req);
+                $this->setTitle($post->getTitle());
                 $comments = array();
                 foreach ($req_comment as $data_comment) {
                     $entity_comment = $master->getTable('comments')->getEntity($data_comment);
