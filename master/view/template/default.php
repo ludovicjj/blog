@@ -93,8 +93,77 @@
                 
                 <div class="col-md-6 information">
                     <h3>Ludovic Jahan</h3>
-                    <p>06 63 13 91 19</p>
-                    <p>jahanlud@gmail.com</p>
+                    <ul class="nav nav-pills flex-column link-vertical">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=index">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=posts">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=register">Inscription</a>
+                        </li>
+                        <?php
+                        if (isset($_SESSION['username'])) {
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="index.php?p=logout">Deconnexion</a>';
+                            echo '</li>';
+                        } else {
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="index.php?p=login">Connection</a>';
+                            echo '</li>';
+                        }
+                        ?>
+                        <?php if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) :?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
+                                aria-haspopup="true" aria-expanded="false">Administration</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="index.php?p=admin.posts.index">Articles</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.php?p=admin.comments.index">Commentaires</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.php?p=admin.users.index">Membres</a>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                    
+                    <ul class="nav nav-pills link-horizon">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=index">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=posts">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=register">Inscription</a>
+                        </li>
+                        <?php if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) :?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
+                                aria-haspopup="true" aria-expanded="false">Administration</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="index.php?p=admin.posts.index">Articles</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.php?p=admin.comments.index">Commentaires</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.php?p=admin.users.index">Membres</a>
+                                </div>
+                            </li>
+                        <?php endif; ?>
+                        <?php
+                        if (isset($_SESSION['username'])) {
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="index.php?p=logout">Deconnexion</a>';
+                            echo '</li>';
+                        } else {
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="index.php?p=login">Connection</a>';
+                            echo '</li>';
+                        }
+                        ?>
+                    </ul>
                 </div>
                 <div class="col-md-6 social">
                     <div class="social-cv">
