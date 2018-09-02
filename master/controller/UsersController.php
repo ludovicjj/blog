@@ -7,6 +7,7 @@ class UsersController extends Controller
 {
     public function register()
     {
+        $this->setTitle('Inscription');
         $master = MasterFactory::getInstance();
         $users = $master->getTable('users');
 		
@@ -42,6 +43,7 @@ class UsersController extends Controller
 	
     public function login()
     {
+        $this->setTitle('Connexion');
         $master = MasterFactory::getInstance();
         $users = $master->getTable('users');
 		
