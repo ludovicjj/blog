@@ -129,13 +129,13 @@ $(function() {
 
 
 $(function() {
-    $( ".champs" ).keyup(function() {
-        $(this).prev().animate({
-            opacity : "1",
-            top : "-30px"
-        }, 500);
-        
-        if( $(this).val() === "") {
+    $( ".champs" ).keyup(function() { 
+        if($(this).val() !== "") {
+            $(this).prev().animate({
+                opacity : "1",
+                top : "-30px"
+            }, 500); 
+        } else if ($(this).val() === "") {
             $(this).prev().animate({
                 opacity : "0",
                 top : "-15px"
