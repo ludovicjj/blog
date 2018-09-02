@@ -40,7 +40,7 @@ class UsersController extends Controller
         }
         $this->render('frontend/register', compact('error', 'message'));
     }
-	
+    
     public function login()
     {
         $this->setTitle('Connexion');
