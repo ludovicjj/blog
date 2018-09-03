@@ -131,6 +131,20 @@ p {
     background: #000;
     padding-right: 0;
 }
+.bloc-contact .contact-success {
+    color: #27633c;
+    background-color: #dbf2e3;
+    border-color: #cdedd8;
+    padding: 15px 15px;
+    display: inline-block;
+}
+.bloc-contact .contact-error {
+    color: #712b29;
+    background-color: #f7dddc;
+    border-color: #f4cfce;
+    padding: 15px 15px;
+    display: inline-block;
+}
 
 /*------------Contact-------------*/
 .bloc-contact {
