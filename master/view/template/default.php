@@ -119,11 +119,11 @@
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
                                 aria-haspopup="true" aria-expanded="false">Administration</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="index.php?p=admin.posts.index">Articles</a>
+                                    <a class="dropdown-item my-item" href="index.php?p=admin.posts.index">Articles</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="index.php?p=admin.comments.index">Commentaires</a>
+                                    <a class="dropdown-item my-item" href="index.php?p=admin.comments.index">Commentaires</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="index.php?p=admin.users.index">Membres</a>
+                                    <a class="dropdown-item my-item" href="index.php?p=admin.users.index">Membres</a>
                                 </div>
                             </li>
                         <?php endif; ?>
@@ -135,11 +135,11 @@
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
                                 aria-haspopup="true" aria-expanded="false">Administration</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="index.php?p=admin.posts.index">Articles</a>
+                                    <a class="dropdown-item my-item" href="index.php?p=admin.posts.index">Articles</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="index.php?p=admin.comments.index">Commentaires</a>
+                                    <a class="dropdown-item my-item" href="index.php?p=admin.comments.index">Commentaires</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="index.php?p=admin.users.index">Membres</a>
+                                    <a class="dropdown-item my-item" href="index.php?p=admin.users.index">Membres</a>
                                 </div>
                             </li>
                         <?php endif; ?>
