@@ -92,7 +92,7 @@
             <div class="row">
                 
                 <div class="col-md-6 information">
-                    <h3>Ludovic Jahan</h3>
+                    <h3>Index du site</h3>
                     <ul class="nav nav-pills flex-column link-vertical">
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?p=index">Accueil</a>
@@ -130,15 +130,6 @@
                     </ul>
                     
                     <ul class="nav nav-pills link-horizon">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?p=index">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?p=posts">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?p=register">Inscription</a>
-                        </li>
                         <?php if (isset($_SESSION['statut']) && $_SESSION['statut'] == 2) :?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
@@ -152,6 +143,15 @@
                                 </div>
                             </li>
                         <?php endif; ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=index">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=posts">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?p=register">Inscription</a>
+                        </li>
                         <?php
                         if (isset($_SESSION['username'])) {
                             echo '<li class="nav-item">';
