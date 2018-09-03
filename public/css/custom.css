@@ -189,10 +189,26 @@ footer .information h3 {
     font-weight: lighter;
     font-size: 20px;
 }
-footer .information p {
-    margin-bottom: 0;
+footer .information .link-horizon{
+   display: none;
+}
+footer .information li a {
+    color: #ffffff;
+}
+footer .dropdown-item {
+    color: #000 !important;
+}
+footer .dropdown-item {
+    padding-left: 25px !important;
+    font-size: bold !important;
+}
+footer .information .link-vertical li a {
+    display: inline-block;
+    padding: 3px 0px;
     font-size: 12px;
-    color: #E6E5E5;
+}
+footer .nav-pills .show > .nav-link {
+    background-color: #000;
 }
 footer .social {
     text-align: right;
@@ -372,6 +388,34 @@ footer .social .social-cv a i {
     }
     .admin .admin-sub-title {
         font-size: 18px;
+    }
+    footer .information{
+        text-align: center;
+    }
+    footer .information .link-vertical{
+        display: none;
+    }
+    footer .information .link-horizon {
+        display: block;
+    }
+    footer .information .link-horizon li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    footer .information .link-horizon li a{
+        padding: 0px 0px;
+        margin: 0px 0px;
+        font-size: 12px;
+        width: 20%;
+    }
+    footer .information .link-horizon .dropdown-toggle:after {
+        display: none;
+    }
+    footer .social{
+        text-align: center;
+        margin-top: 20px;
     }
     
 }
