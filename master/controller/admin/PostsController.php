@@ -65,9 +65,7 @@ class PostsController extends AdminController
                 }
                 $this->render('backend/posts/edit', compact('post'));
             }
-            $this->notFound();
         }
-        $this->notFound();
     }
     
     public function delete()
