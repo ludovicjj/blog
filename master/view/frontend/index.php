@@ -125,7 +125,9 @@
                 </div>
             </div>
         </div>
-
+        
+        <a name="contact"></a>
+        
         <div class="row">
             <div class="col-lg-12">
                 <div class="separateur"></div>
@@ -140,7 +142,7 @@
                         <p>N'hesitez pas à me contacter en utilisant le formulaire pour avoir plus d'informations.</p>
                     </div>
                     <div class="col-lg-8">
-                        <form method="post">
+                        <form action="#contact" method="post">
                             <div class="form-group conteneur-form">
                                 <label for="nom">Nom et prenom</label>
                                 <input type="text" class="form-control champs" id="nom" placeholder="Nom et prenom" name="nom">
@@ -155,6 +157,16 @@
                             </div>
                             <button class="btn btn-custom float-right" type="submit">Envoyer</button>
                         </form>
+                        <?php
+                        if ($error !== null) {
+                            if ($error) {
+                                echo '<span class="contact-error">'.$message.'</span>';
+                            }
+                        }
+                        else if (isset($_GET['info'])) {
+                            echo '<span class="contact-success">Votre message a été envoyé.</span>';
+                        }
+                        ?>
                     </div>
                     
                 </div>
