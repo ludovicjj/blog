@@ -195,12 +195,12 @@ footer .information .link-horizon{
 footer .information li a {
     color: #ffffff;
 }
-footer .dropdown-item {
-    color: #000 !important;
+footer .information .dropdown-item {
+    color: #000;
 }
-footer .dropdown-item {
-    padding-left: 25px !important;
-    font-size: bold !important;
+footer .information .dropdown-menu .my-item {
+    padding-left: 25px;
+    font-size: bold;
 }
 footer .information .link-vertical li a {
     display: inline-block;
