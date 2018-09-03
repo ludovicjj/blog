@@ -21,10 +21,10 @@ p {
 
 /*--------style formulaire----------
 ----------------------------------*/
-.champs {
+.champs, .champs-admin {
     border: 1px #888888 solid;
 }
-.champs:focus {
+.champs:focus, .champs-admin:focus {
     border: 1px #ffffff solid;
 }
 .conteneur-form {
