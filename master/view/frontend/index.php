@@ -162,8 +162,7 @@
                             if ($error) {
                                 echo '<span class="contact-error">'.$message.'</span>';
                             }
-                        }
-                        else if (isset($_GET['info'])) {
+                        } elseif (isset($_GET['info'])) {
                             echo '<span class="contact-success">Votre message a été envoyé.</span>';
                         }
                         ?>
