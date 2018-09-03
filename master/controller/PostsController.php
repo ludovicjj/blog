@@ -54,7 +54,7 @@ class PostsController extends Controller
                 }
             }
         }
-        $this->render('frontend/index');
+        $this->render('frontend/index', compact('error', 'message'));
     }
     
     public function singlePost()
