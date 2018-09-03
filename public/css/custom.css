@@ -157,6 +157,9 @@ p {
 .bloc-contact form .conteneur-form:first-child {
     margin-top: 20px;
 }
+.bloc-contact  .btn-custom{
+   margin-bottom: 15px;
+}
 
 /*-----------logiciel------------*/
 .bloc-logiciel  .bloc-logiciel-title {
@@ -432,6 +435,15 @@ footer .social .social-cv a i {
         margin-top: 20px;
     }
     
+}
+
+@media (max-width: 500px) {
+    .bloc-contact .contact-error{
+        width: 100%;
+    }
+    .bloc-contact .contact-success{
+        width: 100%;
+    }
 }
 
 @media (max-width: 400px) {
