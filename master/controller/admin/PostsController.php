@@ -65,8 +65,7 @@ class PostsController extends AdminController
     
     public function edit()
     {
-        $path_image = null;
-        
+
         if (isset($_GET['id'])) {
             $master = MasterFactory::getInstance();
             $req_post = $master->getTable('posts')->postWithId($_GET['id']);
@@ -98,7 +97,7 @@ class PostsController extends AdminController
                     );
                     header('Location:index.php?p=admin.posts.index');
                 }
-                $this->render('backend/posts/edit', compact('post', 'path_image'));
+                $this->render('backend/posts/edit', compact('post'));
             }
         }
     }
