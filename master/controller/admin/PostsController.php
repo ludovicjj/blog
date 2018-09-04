@@ -31,9 +31,8 @@ class PostsController extends AdminController
                 $_POST['intro'] &&
                 $_POST['content'] &&
                 $_POST['author'] &&
-                $_FILES['image']['name'])
-                ) {
-                    
+                $_FILES['image']['name']))
+            {   
                 $image = $_FILES['image']['name'];
                 $extensions_valides = array('jpg', 'jpeg', 'png');
                 $extension_upload = strtolower(substr(strrchr($image, '.'), 1));
