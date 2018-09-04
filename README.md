@@ -38,7 +38,7 @@
  - introduction
  - contenu
  - auteur (you can let the default value)
- - image (write the way to your image : public/img/yourimage.jpg. Then add your image into the folder public/img/)
+ - image
 6. Click on the button "envoyer".
 
 ### Update a post
