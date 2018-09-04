@@ -31,7 +31,8 @@ class PostsController extends AdminController
                 $_POST['intro'] &&
                 $_POST['content'] &&
                 $_POST['author'] &&
-                $_FILES['image']['name'])) {
+                $_FILES['image']['name'])
+                ) {
                     
                 $image = $_FILES['image']['name'];
                 $extensions_valides = array('jpg', 'jpeg', 'png');
@@ -84,8 +85,8 @@ class PostsController extends AdminController
                             move_uploaded_file(
                                 $_FILES['image']['tmp_name'],
                                 $path_image
-                            ); 
-                        }  
+                            );
+                        }
                     }
                     $master->getTable('posts')->addPostWithId(
                         $_POST['title'],
