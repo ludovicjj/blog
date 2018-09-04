@@ -2,7 +2,7 @@
     <div class="container admin">        
         <a href="index.php?p=admin.posts.index" class="back-admin-index">Retour à la gestion des articles</a>
         
-        <form method="post" class="form-group">
+        <form method="post" class="form-group" enctype="multipart/form-data">
             <legend>Ajouter un article</legend>
             <div class="form-group">
                 <label for="title">Titre</label>
@@ -22,8 +22,8 @@
                 value="<?= $_SESSION['username'];?>"/>
             </div>
             <div class="form-group">
-                <label for="image">Image</label>
-                <input id="image" name="image" class="form-control champs-admin"/>
+                <label for="image">Image</label><br/>
+                <input id="image" name="image" type="file"/>
             </div>
             
             <button type="submit"class="btn btn-custom">Envoyer</button>
